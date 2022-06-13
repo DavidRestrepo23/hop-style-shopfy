@@ -1,0 +1,6 @@
+development:
+  theme_id: 130138898629
+  password: shptka_ce138161138c3039ba1008826bbdc7ab
+  store: hopstyle2020.myshopify.com
+  ignore_files:
+  - config/settings_data.json
