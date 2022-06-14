@@ -1,0 +1,37 @@
+<section class="block-collection-section">
+	<div class="container position-relative">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>one more step into the world of <span>our fashion</span></h2>
+				<div>
+					<img src="{{ 'reel.png' | asset_url }}" width="280px" alt="Reel" class="reel">
+					<p>
+						The idea of self-worth, one way or another, is free of art.
+						Sublimation monotonously induces destructive.
+					</p>
+				</div>
+			</div>
+			<div class="col-md-6 d-flex justify-content-center">
+				<ul>
+                    <li><a href="#"><span>01</span> Savage Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
+                    <li><a href="#"><span>02</span> Adventure Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
+                    <li><a href="#"><span>03</span> Energy Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
+                    <li><a href="#"><span>04</span> Victory Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
+                </ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% schema %}
+{
+    "name": "Block Collection",
+    "settings": [],
+    "presets": [
+        {
+            "category": "Block",
+            "name":"Block Collection"
+        }
+    ]
+}
+{% endschema %}

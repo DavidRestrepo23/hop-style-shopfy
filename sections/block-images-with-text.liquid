@@ -1,0 +1,58 @@
+<section class="block-images-with-text-section">
+	<div class="container-fluid h-100">
+		<div class="row images">
+			<div class="col-3 px-0">
+				<img
+					src="{{ 'image-1.png' | asset_url }}"
+                    class="first"
+					width="260px"
+					height="auto"
+					alt=""
+				/>
+			</div>
+			<div class="col-6 text-center">
+				<img
+					src="{{ 'image-2.png' | asset_url }}"
+					width="716px"
+                    class="second"
+					height="auto"
+					alt=""
+				/>
+			</div>
+			<div class="col-3 text-end px-0">
+				<img
+					src="{{ 'image-3.png' | asset_url }}"
+					width="261px"
+					height="auto"
+					alt=""
+				/>
+			</div>
+		</div>
+		<div class="row justify-content-center align-items-center">
+			<div class="col-md-6">
+				<h2>
+					We turn the
+					<a href="" class="btn btn-primary"
+						>Shop Now {% include 'icon-arrow-top.liquid' %}</a
+					>
+					<strong>perception</strong> of <b>style</b> <br />
+					<span class="gray">and create</span> our own <b>interpretation</b>
+				</h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Block images with text",
+    "settings": [],
+    "presets": [
+        {
+            "category": "Block",
+            "name":"Block images with text"
+        }
+    ]
+}
+{% endschema %}

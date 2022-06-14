@@ -1,0 +1,47 @@
+<section class="main-banner-content">
+    <div class="container banner">
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <div>
+                    <h1>
+                        The capsule <br />
+                        that will change <br />
+                        <span>your</span> style
+                    </h1>
+                </div>
+                <div class="d-flex align-items-baseline justify-content-start banner__info">
+                    {% include 'icon-fill.liquid' %}
+                    <p>
+                        The archetype is continued by the <br />
+                        compositional sanguine person
+                    </p>
+                    <a href="" class="btn btn-primary"
+                        >Shop Now
+                        {% include 'icon-arrow-top.liquid' %}
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5 banner__image">
+                <img
+                    src="./assets/hop-image.png"
+                    width="502px"
+                    height="745px"
+                    alt=""
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Main Banner",
+    "settings": [],
+    "presets": [
+        {
+            "category": "header",
+            "name":"Main Banner"
+        }
+    ]
+}
+{% endschema %}
