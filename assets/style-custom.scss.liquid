@@ -7,7 +7,12 @@ $color-gray-primary: #7b7f89;
 	font-family: "Space Grotesk", sans-serif;
 }
 
-section {
+body,
+html {
+	overflow-x: hidden;
+}
+
+section.with-margin {
 	margin-bottom: 200px;
 }
 
@@ -19,6 +24,13 @@ section {
 	width: 156px;
 	background: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(30px);
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		font-size: 14px;
+		width: 110px;
+		z-index: 1000;
+		padding: 7px;
+	}
 }
 
 /*HEADER**/
@@ -27,7 +39,7 @@ header {
 	.logo {
 		img {
 			width: 153px;
-			height: 35px;
+			height: auto;
 		}
 		svg {
 			margin-left: 30px;
@@ -71,7 +83,28 @@ header {
 			}
 		}
 	}
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		.logo {
+			img {
+				width: 120px;
+			}
+		}
+		.nav {
+			.nav__item {
+				.__links {
+					ul {
+						padding: 0;
+						li {
+							margin: 0 5px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
+
 /* /* HEADER**/
 
 /*MAIN BANNER**/
@@ -104,6 +137,21 @@ header {
 			}
 		}
 	}
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		.banner {
+			h1 {
+				font-size: 50px;
+			}
+
+			.banner__info {
+				p {
+					font-size: 16px;
+					padding: 0 16px;
+				}
+			}
+		}
+	}
 }
 
 /* /* MAIN BANNER**/
@@ -116,25 +164,18 @@ header {
 		font-weight: 500;
 		font-size: 48px;
 		z-index: 100;
-		padding: 0 175px 0 0;
 
 		span {
 			color: $color-black;
 		}
 	}
 
-	.reel {
-		position: absolute;
-		left: -78px;
-		top: 120px;
-	}
-
 	p {
 		color: $color-gray-primary;
 		font-weight: 400;
 		font-size: 20px;
-		padding: 10px 174px 0px 166px;
-		margin-left: 60px;
+		margin: 0;
+		padding: 0 20px;
 	}
 
 	ul {
@@ -169,18 +210,40 @@ header {
 			}
 		}
 	}
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		h2 {
+			font-size: 28px;
+			padding: 0 70px 0 0;
+		}
+		p {
+			font-size: 16px;
+		}
+
+		ul {
+			li {
+				width: 270px;
+				span {
+					font-size: 20px;
+				}
+				a {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }
 /* /* BLOCK COLLECTION **/
 
 .block-images-with-text-section {
 	background-image: url("{{ 'bg-1.png' | asset_url }}");
 	background-repeat: no-repeat;
-	height: 800px;
+	height: auto;
+	padding-bottom: 100px;
 	width: 100%;
 	background-size: cover;
 
 	.images {
-
 		.first {
 			position: relative;
 			top: -140px;
@@ -195,9 +258,8 @@ header {
 	h2 {
 		color: $color-white;
 		font-size: 62px;
-		text-align: right;
+		text-align: center;
 		font-weight: 300;
-		padding: 0 100px 0 0;
 
 		strong {
 			font-weight: 900;
@@ -209,6 +271,256 @@ header {
 
 		span {
 			color: $color-gray-primary;
+		}
+	}
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		background-position: top;
+		padding-bottom: 50px;
+
+		h2 {
+			font-size: 45px;
+		}
+	}
+}
+
+/*COLLECTIONS HOME*/
+
+.collections-home-section {
+	background-color: $color-black;
+	padding: 120px 0 60px;
+
+	.collections-item {
+		position: relative;
+		margin-bottom: 20px;
+
+		.item-info {
+			position: absolute;
+			bottom: 21px;
+			left: 25px;
+
+			span {
+				font-weight: 400;
+				font-size: 24px;
+				color: $color-white;
+			}
+		}
+	}
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		.collections-item {
+			.item-info {
+				span {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}
+
+/* /* COLLECTIONS HOME*/
+
+.products-slide-section {
+	background-image: url("{{ 'bg-2.png' | asset_url }}");
+	background-repeat: no-repeat;
+	height: auto;
+	padding: 126px 0 175px;
+	width: 100%;
+	background-size: cover;
+
+	h2 {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 36px;
+		color: $color-white;
+		margin: 0;
+	}
+
+	.slick-slide img {
+		object-fit: contain !important;
+	}
+
+	.slick-list {
+		padding: 0 0 !important;
+	}
+
+	.arrows {
+		z-index: 100000;
+		ul {
+			li {
+				list-style: none;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	img {
+		width: 90%;
+		height: auto;
+	}
+
+	@media (min-width: 900px) and (max-width: 1440px) {
+		.container-fluid {
+			margin: 0 50px;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.container-fluid {
+			margin: 0 220px;
+		}
+		.arrows {
+			position: relative;
+			top: 0;
+			left: -33px;
+		}
+	}
+
+	@media (min-width: 900px) and (max-width: 1199px) {
+		padding: 60px 0 80px;
+
+		.container-fluid {
+			margin: 0 120px;
+		}
+
+		h2 {
+			font-size: 28px;
+		}
+	}
+}
+
+footer {
+	background-color: $color-black;
+	padding: 80px 0;
+	margin-top: -10px;
+
+	.row-1 {
+		border-bottom: 1px solid $color-gray-primary;
+	}
+
+	.image-brand {
+		svg {
+			margin-left: 60px;
+		}
+	}
+
+	.menu-links,
+	.collections-links {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style: none;
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.menu-links {
+		margin-right: 100px;
+
+		li {
+			width: 208px;
+			position: relative;
+			margin-bottom: 30px;
+
+			&::after {
+				content: "";
+				border-bottom: 1px solid $color-gray-primary;
+				width: 100%;
+				height: 1px;
+				position: absolute;
+				left: 0;
+				bottom: -17px;
+			}
+
+			a {
+				font-size: 24px;
+				color: $color-white;
+				font-weight: 400;
+			}
+
+			svg {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+			}
+		}
+	}
+
+	.collections-links {
+		position: relative;
+
+		&::after {
+			content: "";
+			border-bottom: 1px solid $color-gray-primary;
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			bottom: 12px;
+		}
+
+		h4 {
+			width: 208px;
+			position: relative;
+			a {
+				color: $color-white;
+				font-size: 24px;
+				font-weight: 400;
+				text-decoration: none;
+			}
+			svg {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				top: 0;
+				margin: auto;
+			}
+		}
+
+		li {
+			margin-bottom: 8px;
+			a {
+				color: $color-gray-primary;
+			}
+		}
+	}
+
+	.others-links {
+		li {
+			list-style: none;
+			margin-bottom: 20px;
+			position: relative;
+
+			a {
+				color: $color-white;
+				font-weight: 400;
+				font-size: 18px;
+				text-decoration: none;
+			}
+
+			svg {
+				position: relative;
+				width: 20px;
+				height: 20px;
+				top: -3px;
+			}
+		}
+	}
+
+	.copyright {
+		small {
+			a {
+				color: $color-white;
+			}
+			color: $color-gray-primary;
+			font-weight: 400;
+			font-size: 18px;
 		}
 	}
 }

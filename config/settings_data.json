@@ -1,0 +1,54 @@
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      },
+      "1655168638d0bfbf06": {
+        "type": "banner",
+        "settings": {
+        }
+      },
+      "16551697409ba64f9f": {
+        "type": "block-collections",
+        "settings": {
+        }
+      },
+      "1655171411cec64c5f": {
+        "type": "block-images-with-text",
+        "settings": {
+        }
+      },
+      "165522536007013167": {
+        "type": "collections-home",
+        "settings": {
+        }
+      },
+      "1655234983b7f065ab": {
+        "type": "products-slide-home",
+        "settings": {
+        }
+      },
+      "16552371285558e527": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+      "1655168638d0bfbf06",
+      "16551697409ba64f9f",
+      "1655171411cec64c5f",
+      "165522536007013167",
+      "1655234983b7f065ab",
+      "16552371285558e527"
+    ]
+  }
+}

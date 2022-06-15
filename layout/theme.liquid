@@ -1,178 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="{{ settings.color_button }}">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="theme-color" content="{{ settings.color_button }}" />
 
-  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
-  <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+		<link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
+		<link rel="preconnect" href="https://fonts.shopify.com" crossorigin />
+		<link rel="preconnect" href="https://monorail-edge.shopifysvc.com" />
 
-  <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
-  <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
-  <link
+		<link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script" />
+		<link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script" />
+		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
 			rel="stylesheet"
 			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 			crossorigin="anonymous"
 		/>
 
-  {%- if canonical_url != blank  -%}
-    <link rel="canonical" href="{{ canonical_url }}">
-  {%- endif -%}
+		{%- if canonical_url != blank -%}
+		<link rel="canonical" href="{{ canonical_url }}" />
+		{%- endif -%} {%- if settings.favicon != blank -%}
+		<link
+			rel="shortcut icon"
+			href="{{ settings.favicon | img_url: '32x32' }}"
+			type="image/png"
+		/>
+		{%- endif -%} {%- capture seo_title -%} {%- if request.page_type == 'search'
+		and search.performed == true -%}
+		{{
+			"general.search.heading" | t: count:search.results_count
+		}}:
+		{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+		{%- else -%}
+		{{
+			page_title
+		}}
+		{%- endif -%} {%- if current_tags -%} {%- assign meta_tags = current_tags |
+		join: ', ' -%} &ndash;
+		{{ 'general.meta.tags' | t: tags: meta_tags -}}
+		{%- endif -%} {%- if current_page != 1 -%} &ndash;
+		{{
+			"general.meta.page" | t: page:current_page
+		}}
+		{%- endif -%} {%- assign escaped_page_title = page_title | escape -%} {%-
+		unless escaped_page_title contains shop.name -%} &ndash;
+		{{
+			shop.name
+		}}
+		{%- endunless -%} {%- endcapture -%}
+		<title>{{ seo_title | strip }}</title>
 
-  {%- if settings.favicon != blank -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-  {%- endif -%}
+		{%- if page_description -%}
+		<meta name="description" content="{{ page_description | escape }}" />
+		{%- endif -%} {% include 'social-meta-tags' %} {% include 'css-variables' %}
 
-  {%- capture seo_title -%}
-    {%- if request.page_type == 'search' and search.performed == true -%}
-      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
-    {%- else -%}
-      {{ page_title }}
-    {%- endif -%}
-    {%- if current_tags -%}
-      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
-    {%- endif -%}
-    {%- if current_page != 1 -%}
-      &ndash; {{ 'general.meta.page' | t: page: current_page }}
-    {%- endif -%}
-    {%- assign escaped_page_title = page_title | escape -%}
-    {%- unless escaped_page_title contains shop.name -%}
-      &ndash; {{ shop.name }}
-    {%- endunless -%}
-  {%- endcapture -%}
-  <title>{{ seo_title | strip }}</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+			integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 
-  {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
-  {%- endif -%}
+		{{
+			"style-custom.scss.css" | asset_url | stylesheet_tag
+		}}
 
-  {% include 'social-meta-tags' %}
-  {% include 'css-variables' %}
+		<style>
+			{{ header_font | font_face: font_display: 'swap' }}
+			{{ base_font | font_face: font_display: 'swap' }}
+			{{ base_font_bold | font_face: font_display: 'swap' }}
+			{{ base_font_bolder | font_face: font_display: 'swap' }}
+			{{ base_font_italic | font_face: font_display: 'swap' }}
+			{{ base_font_bold_italic | font_face: font_display: 'swap' }}
+		</style>
 
-  {{ 'style-custom.scss.css' | asset_url | stylesheet_tag }}
+		<script>
+			var theme = {
+			  breakpoints: {
+			    medium: 750,
+			    large: 990,
+			    widescreen: 1400
+			  },
+			  strings: {
+			    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+			    soldOut: {{ 'products.product.sold_out' | t | json }},
+			    unavailable: {{ 'products.product.unavailable' | t | json }},
+			    regularPrice: {{ 'products.product.regular_price' | t | json }},
+			    salePrice: {{ 'products.product.sale_price' | t | json }},
+			    sale: {{ 'products.product.on_sale' | t | json }},
+			    fromLowestPrice: {{ 'products.product.from_lowest_price_html' | t: lowest_price: '[price]' | json }},
+			    vendor: {{'products.product.vendor' | t | json }},
+			    showMore: {{ 'general.filters.show_more' | t | json }},
+			    showLess: {{ 'general.filters.show_less' | t | json }},
+			    searchFor: {{ 'general.search.search_for' | t | json }},
+			    addressError: {{ 'sections.map.address_error' | t | json }},
+			    addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+			    addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+			    authError: {{ 'sections.map.auth_error_html' | t | json }},
+			    newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
+			    external: {{ 'general.accessibility.link_messages.external' | t | json }},
+			    newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }},
+			    removeLabel: {{ 'cart.label.remove' | t: product: '[product]' | json }},
+			    update: {{ 'cart.label.update' | t | json }},
+			    quantity: {{ 'cart.label.quantity' | t | json }},
+			    discountedTotal: {{ 'cart.label.discounted_total' | t | json }},
+			    regularTotal: {{ 'cart.label.regular_total' | t | json }},
+			    priceColumn: {{ 'cart.label.price_column' | t | json }},
+			    quantityMinimumMessage: {{ 'products.product.quantity_minimum_message' | t | json }},
+			    cartError: {{ 'cart.general.cart_error' | t | json }},
+			    removedItemMessage: {{ 'cart.general.removed_item_html' | t: quantity: '[quantity]', link: '[link]' | json }},
+			    unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+			    unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+			    oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
+			    otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }},
+			    quantityLabel: {{ 'cart.popup.quantity_label' | t: quantity_count: '[count]' | json }},
+			    products: {{ 'general.search.products' | t | json }},
+			    loading: {{ 'general.search.loading' | t | json }},
+			    number_of_results: {{ 'general.search.number_of_results' | t: result_number: '[result_number]', results_count: '[results_count]' | json }},
+			    number_of_results_found: {{ 'general.search.number_of_results_found' | t: results_count: '[results_count]' | json }},
+			    one_result_found: {{ 'general.search.one_result_found' | t | json }}
+			  },
+			  moneyFormat: {{ shop.money_format | json }},
+			  moneyFormatWithCurrency: {{ shop.money_with_currency_format | json }},
+			  settings: {
+			    predictiveSearchEnabled: {{ settings.predictive_search_enabled | json }},
+			    predictiveSearchShowPrice: {{ settings.predictive_search_show_price | json }},
+			    predictiveSearchShowVendor: {{ settings.predictive_search_show_vendor | json }}
+			  },
+			  stylesheet: "{{ 'theme.css' | asset_url }}"
+			}
 
-  <style>
-    {{ header_font | font_face: font_display: 'swap' }}
-    {{ base_font | font_face: font_display: 'swap' }}
-    {{ base_font_bold | font_face: font_display: 'swap' }}
-    {{ base_font_bolder | font_face: font_display: 'swap' }}
-    {{ base_font_italic | font_face: font_display: 'swap' }}
-    {{ base_font_bold_italic | font_face: font_display: 'swap' }}
-  </style>
+			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+		</script>
 
-  
+		{%- if request.page_type contains 'customers/' -%}
+		<script
+			src="{{ 'shopify_common.js' | shopify_asset_url }}"
+			defer="defer"
+		></script>
+		{%- endif -%}
 
-  <script>
-    var theme = {
-      breakpoints: {
-        medium: 750,
-        large: 990,
-        widescreen: 1400
-      },
-      strings: {
-        addToCart: {{ 'products.product.add_to_cart' | t | json }},
-        soldOut: {{ 'products.product.sold_out' | t | json }},
-        unavailable: {{ 'products.product.unavailable' | t | json }},
-        regularPrice: {{ 'products.product.regular_price' | t | json }},
-        salePrice: {{ 'products.product.sale_price' | t | json }},
-        sale: {{ 'products.product.on_sale' | t | json }},
-        fromLowestPrice: {{ 'products.product.from_lowest_price_html' | t: lowest_price: '[price]' | json }},
-        vendor: {{'products.product.vendor' | t | json }},
-        showMore: {{ 'general.filters.show_more' | t | json }},
-        showLess: {{ 'general.filters.show_less' | t | json }},
-        searchFor: {{ 'general.search.search_for' | t | json }},
-        addressError: {{ 'sections.map.address_error' | t | json }},
-        addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
-        addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
-        authError: {{ 'sections.map.auth_error_html' | t | json }},
-        newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
-        external: {{ 'general.accessibility.link_messages.external' | t | json }},
-        newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }},
-        removeLabel: {{ 'cart.label.remove' | t: product: '[product]' | json }},
-        update: {{ 'cart.label.update' | t | json }},
-        quantity: {{ 'cart.label.quantity' | t | json }},
-        discountedTotal: {{ 'cart.label.discounted_total' | t | json }},
-        regularTotal: {{ 'cart.label.regular_total' | t | json }},
-        priceColumn: {{ 'cart.label.price_column' | t | json }},
-        quantityMinimumMessage: {{ 'products.product.quantity_minimum_message' | t | json }},
-        cartError: {{ 'cart.general.cart_error' | t | json }},
-        removedItemMessage: {{ 'cart.general.removed_item_html' | t: quantity: '[quantity]', link: '[link]' | json }},
-        unitPrice: {{ 'products.product.unit_price_label' | t | json }},
-        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
-        oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
-        otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }},
-        quantityLabel: {{ 'cart.popup.quantity_label' | t: quantity_count: '[count]' | json }},
-        products: {{ 'general.search.products' | t | json }},
-        loading: {{ 'general.search.loading' | t | json }},
-        number_of_results: {{ 'general.search.number_of_results' | t: result_number: '[result_number]', results_count: '[results_count]' | json }},
-        number_of_results_found: {{ 'general.search.number_of_results_found' | t: results_count: '[results_count]' | json }},
-        one_result_found: {{ 'general.search.one_result_found' | t | json }}
-      },
-      moneyFormat: {{ shop.money_format | json }},
-      moneyFormatWithCurrency: {{ shop.money_with_currency_format | json }},
-      settings: {
-        predictiveSearchEnabled: {{ settings.predictive_search_enabled | json }},
-        predictiveSearchShowPrice: {{ settings.predictive_search_show_price | json }},
-        predictiveSearchShowVendor: {{ settings.predictive_search_show_vendor | json }}
-      },
-      stylesheet: "{{ 'theme.css' | asset_url }}"
-    }
+		<script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+		<script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
 
-    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-  </script>
+		<script type="text/javascript">
+			if (window.MSInputMethodContext && document.documentMode) {
+				var scripts = document.getElementsByTagName("script")[0]
+				var polyfill = document.createElement("script")
+				polyfill.defer = true
+				polyfill.src = "{{ 'ie11CustomProperties.min.js' | asset_url }}"
 
-  {%- if request.page_type contains 'customers/' -%}
-    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-  {%- endif -%}
+				scripts.parentNode.insertBefore(polyfill, scripts)
+			}
+		</script>
 
-  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+		{{
+			content_for_header
+		}}
+	</head>
 
-  <script type="text/javascript">
-    if (window.MSInputMethodContext && document.documentMode) {
-      var scripts = document.getElementsByTagName('script')[0];
-      var polyfill = document.createElement("script");
-      polyfill.defer = true;
-      polyfill.src = "{{ 'ie11CustomProperties.min.js' | asset_url }}";
+	<body class="template-{{ request.page_type | handle }}">
+		<a class="in-page-link visually-hidden skip-link" href="#MainContent">{{
+			"general.accessibility.skip_to_content" | t
+		}}</a>
 
-      scripts.parentNode.insertBefore(polyfill, scripts);
-    }
-  </script>
-
-  {{ content_for_header }}
-</head>
-
-<body class="template-{{ request.page_type | handle }}">
-
-  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
-  <!-- {%- if settings.enable_ajax -%}
+		<!-- {%- if settings.enable_ajax -%}
     {% include 'cart-popup' %}
   {%- endif -%} -->
 
-  {% section 'header' %}
+		{% section 'header' %}
 
-  <div class="page-container drawer-page-content" id="PageContainer">
+		<div class="page-container drawer-page-content" id="PageContainer">
+			<main
+				class="main-content js-focus-hidden"
+				id="MainContent"
+				role="main"
+				tabindex="-1"
+			>
+				{{ content_for_layout }}
+			</main>
 
-    <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
-      {{ content_for_layout }}
-    </main>
+			<!-- {% section 'footer' %} -->
 
-    <!-- {% section 'footer' %} -->
+			<div id="slideshow-info" class="visually-hidden" aria-hidden="true">
+				{{- 'sections.slideshow.navigation_instructions' | t -}}
+			</div>
+		</div>
 
-    <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
-      {{- 'sections.slideshow.navigation_instructions' | t -}}
-    </div>
+		<ul hidden>
+			<li id="a11y-refresh-page-message">
+				{{ "general.accessibility.refresh_page" | t }}
+			</li>
+			<li id="a11y-selection-message">
+				{{ "general.accessibility.selection_help" | t }}
+			</li>
+		</ul>
 
-  </div>
-
-  <ul hidden>
-    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
-    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
-  </ul>
-</body>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+			integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script>
+			$(".slider-products-home").slick({
+				centerMode: true,
+				lazyLoad: "progressive",
+				autoplay: false,
+				speed: 1100,
+				slidesToShow: 4,
+				prevArrow: $('.prev'),
+      			nextArrow: $('.next'),
+			})
+		</script>
+	</body>
 </html>
