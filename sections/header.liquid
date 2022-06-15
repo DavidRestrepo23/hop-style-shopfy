@@ -3,20 +3,15 @@
 		<div class="row w-100 align-items-center">
 			<div class="col-md-3 text-center nav__item">
 				<div class="logo">
-					<img src="{{ 'hop-studio.png' | asset_url }}" alt="" />
-					{% include 'icon-points.liquid' %}
+					<a href="/"><img src="{{  section.settings.brand | img_url: 'medium' }}" alt="Hop Style" /></a>
+					<a href="">{% include 'icon-points.liquid' %}</a>
 				</div>
 			</div>
 			<div
 				class="col-md-6 d-flex align-items-center justify-content-between nav__item"
 			>
 				<div class="__links">
-					<ul>
-						<li><a href="">Home</a></li>
-						<li><a href="">%Sale</a></li>
-						<li><a href="">Catalogue</a></li>
-						<li><a href="">Lookbook</a></li>
-					</ul>
+					{% include 'site-nav', linklist: section.settings.menu_links %}
 				</div>
 				<div class="__links">
 					<ul>
@@ -33,7 +28,7 @@
 				</div>
 			</div>
 			<div class="col-md-2 text-center nav__item">
-				<span> {% include 'icon-cart.liquid' %} Bag(0) </span>
+				<span> <a href="/cart">{% include 'icon-cart.liquid' %} Bag(0)</a> </span>
 			</div>
 			<div class="col-md-1 text-center nav__item">
 				{% include 'icon-user.liquid' %}
@@ -41,3 +36,28 @@
 		</div>
 	</nav>
 </header>
+
+{% schema %}
+{
+    "name": "Header",
+    "settings": [
+
+	{
+		"type": "image_picker",
+		"id": "brand",
+		"label": "label"
+	},
+	{
+		"type": "link_list",
+		"id": "menu_links",
+		"label": "label"
+	}
+	],
+    "presets": [
+        {
+            "category": "header",
+            "name":"Header"
+        }
+    ]
+}
+{% endschema %}

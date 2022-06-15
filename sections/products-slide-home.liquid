@@ -1,43 +1,27 @@
 <section class="products-slide-section">
-	<div class="container">
-		<div class="row arrows mb-4">
+	<div class="container h-100">
+		<div class="row h-100 align-items-center arrows">
 			<div class="col-12 d-flex justify-content-between align-items-center">
-				<h2>new in stock</h2>
+				<h2>{{ section.settings.heading_title }}</h2>
 				<ul class="m-0 p-o d-flex">
 					<li class="prev">{% include 'icon-arrow-left.liquid' %} </li>
 					<li class="next">{% include 'icon-arrow-right.liquid' %}</li>
 				</ul>
 			</div>
-		</div>
-	</div>
-	<div class="container-fluid h-100">
-		<div class="row h-100 align-items-center">
-			<div class="col-12">
+			<div class="col-12 mt-5">
 				<div class="slider-products-home">
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
-					<div>
-						<img src="https://via.placeholder.com/481x500" alt="" />
-					</div>
+					{% if section.settings.collection %}
+						{% for product in collections[section.settings.collection].products %}
+							<div>
+								<a href="{{product.url}}" class="product-content">
+									<img class="lazyload" data-src="{{product.featured_image.src | img_url: '300x'}}" alt="{{product.title}}" />
+									<div class="price-content">
+										<span class="price"> {% include 'icon-cart.liquid' %} {{product.price | money}}</span>
+									</div>
+								</a>
+							</div>
+						{% endfor %}
+					{% endif %}
 				</div>
 			</div>
 		</div>
@@ -45,10 +29,22 @@
 </section>
 
 
-{% schema %} 
+{% schema %}
 { 
     "name": "Products Slide Home",
-    "settings": [],
+    "settings": [
+		{
+			"type": "text",
+			"id": "heading_title",
+			"label": "Heading text",
+			"default": "New In Stock"
+		},
+		{
+			"type": "collection",
+			"id": "collection",
+			"label": "Select Collection"
+		}
+	],
     "presets": [
         {
             "category": "Block",

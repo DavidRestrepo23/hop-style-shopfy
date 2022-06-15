@@ -3,7 +3,7 @@
 		<div class="row images">
 			<div class="col-3 px-0">
 				<img
-					src="{{ 'image-1.png' | asset_url }}"
+					src="{{ section.settings.image_1 | img_url: 'large' }}"
                     class="first"
 					width="70%"
 					height="auto"
@@ -12,7 +12,7 @@
 			</div>
 			<div class="col-6 text-center">
 				<img
-					src="{{ 'image-2.png' | asset_url }}"
+					src="{{ section.settings.image_2 | img_url: '1432x760' }}"
 					width="100%"
                     class="second"
 					height="auto"
@@ -21,7 +21,7 @@
 			</div>
 			<div class="col-3 text-end px-0">
 				<img
-					src="{{ 'image-3.png' | asset_url }}"
+					src="{{ section.settings.image_3 | img_url: 'large' }}"
 					width="70%"
 					height="auto"
 					alt=""
@@ -29,14 +29,9 @@
 			</div>
 		</div>
 		<div class="row justify-content-center align-items-center">
-			<div class="col-md-7 col-lg-6">
+			<div class="col-md-8 col-lg-8 col-xxl-6">
 				<h2>
-					We turn the
-					<a href="" class="btn btn-primary"
-						>Shop Now {% include 'icon-arrow-top.liquid' %}</a
-					>
-					<strong>perception</strong> of <b>style</b> <br />
-					<span class="gray">and create</span> our own <b>interpretation</b>
+					{{section.settings.title}}
 				</h2>
 			</div>
 		</div>
@@ -47,7 +42,28 @@
 {% schema %}
 {
     "name": "Block images with text",
-    "settings": [],
+    "settings": [
+		{
+			"type": "html",
+			"id": "title",
+			"label": "Text"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_1",
+			"label": "Image left"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_2",
+			"label": "Image center"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_3",
+			"label": "Image Rigth"
+		}
+	],
     "presets": [
         {
             "category": "Block",

@@ -4,6 +4,8 @@
       "header": {
         "type": "header",
         "settings": {
+          "brand": "shopify:\/\/shop_images\/hop-studio.png",
+          "menu_links": "new-menu"
         }
       },
       "footer": {
@@ -14,16 +16,68 @@
       "1655168638d0bfbf06": {
         "type": "banner",
         "settings": {
+          "banner_heading": "The capsule <br>                      that will change <br>\n<span>your<\/span> style",
+          "banner_subheading": "The archetype is continued by the <br>\ncompositional sanguine person",
+          "banner_text_link": "Shop Now",
+          "banner_link": "shopify:\/\/collections\/all",
+          "banner_dot_1_text": "Caps",
+          "banner_dot_1_link": "shopify:\/\/collections\/caps",
+          "banner_dot_2_text": "T-Shirts",
+          "banner_dot_2_link": "shopify:\/\/collections\/t-shirts",
+          "banner_dot_3_text": "Pants",
+          "banner_dot_3_link": "shopify:\/\/collections\/pants",
+          "banner_dot_4_text": "Pullover",
+          "banner_dot_4_link": "shopify:\/\/collections\/sweatshirt",
+          "banner_dot_5_text": "Vest",
+          "banner_dot_5_link": "shopify:\/\/collections\/vest"
         }
       },
       "16551697409ba64f9f": {
         "type": "block-collections",
+        "blocks": {
+          "4d5c8158-98f5-4fcf-8efa-712e04442a80": {
+            "type": "collection",
+            "settings": {
+              "collection_name": "caps"
+            }
+          },
+          "e7265299-f138-4287-abba-a6b680457afd": {
+            "type": "collection",
+            "settings": {
+              "collection_name": "jogger"
+            }
+          },
+          "5f720f74-a959-4333-af79-c8d5d268bdb2": {
+            "type": "collection",
+            "settings": {
+              "collection_name": "t-shirts"
+            }
+          },
+          "2d09b6ad-6e25-4ee3-8ad5-378a5ada8229": {
+            "type": "collection",
+            "settings": {
+              "collection_name": "pants"
+            }
+          }
+        },
+        "block_order": [
+          "4d5c8158-98f5-4fcf-8efa-712e04442a80",
+          "e7265299-f138-4287-abba-a6b680457afd",
+          "5f720f74-a959-4333-af79-c8d5d268bdb2",
+          "2d09b6ad-6e25-4ee3-8ad5-378a5ada8229"
+        ],
         "settings": {
+          "title": "one more step into the world of <span>our fashion<\/span>",
+          "subtext": "The idea of self-worth, one way or another, is free of art.\t\t\tSublimation monotonously induces destructive."
         }
       },
       "1655171411cec64c5f": {
         "type": "block-images-with-text",
         "settings": {
+          "title": "We turn the\t\t\t\t<a href=\"\/collections\/all\" class=\"btn btn-primary\">Shop Now\n<\/a>\t\t\t\t<strong>perception<\/strong> of <b>style<\/b> <br>\t\t\t\t<span class=\"gray\">and create<\/span> our own <b>interpretation<\/b>",
+          "image_1": "shopify:\/\/shop_images\/image-1.png",
+          "image_2": "shopify:\/\/shop_images\/Rectangle_37_1.png",
+          "image_3": "shopify:\/\/shop_images\/image-3.png"
         }
       },
       "165522536007013167": {
@@ -34,6 +88,8 @@
       "1655234983b7f065ab": {
         "type": "products-slide-home",
         "settings": {
+          "heading_title": "New In Stock",
+          "collection": "new-arrivals"
         }
       },
       "16552371285558e527": {

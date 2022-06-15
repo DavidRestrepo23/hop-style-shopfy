@@ -2,21 +2,25 @@
 	<div class="container position-relative">
 		<div class="row justify-content-between">
 			<div class="col-md-6 col-lg-5 col-xl-5 col-xxl-4">
-				<h2>one more step into the world of <span>our fashion</span></h2>
+				<h2>{{section.settings.title}}</h2>
 				<div class="d-flex align-items-center">
 					<img src="{{ 'reel.png' | asset_url }}" width="80px" height="auto" alt="Reel" class="reel">
 					<p>
-						The idea of self-worth, one way or another, is free of art.
-						Sublimation monotonously induces destructive.
+						{{section.settings.subtext}}
 					</p>
 				</div>
 			</div>
 			<div class="col-md-6 d-flex justify-content-center mt-5">
 				<ul>
-                    <li><a href="#"><span>01</span> Savage Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
-                    <li><a href="#"><span>02</span> Adventure Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
-                    <li><a href="#"><span>03</span> Energy Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
-                    <li><a href="#"><span>04</span> Victory Collection {% include 'icon-arrow-top-black.liquid' %}</a></li>
+					{% for block in section.blocks %}
+					{%- assign collection = collections[block.settings.collection_name] -%}
+					<a href="/collections/{{collection.handle}}">
+						<li>
+							<span>0{{forloop.index}}</span>
+							{{collection.title}} {% include 'icon-arrow-top-black.liquid' %}
+						</li>
+					</a>
+					{% endfor %}
                 </ul>
 			</div>
 		</div>
@@ -26,7 +30,31 @@
 {% schema %}
 {
     "name": "Block Collection",
-    "settings": [],
+    "settings": [
+		{
+			"type": "html",
+			"id": "title",
+			"label": "Title"
+		},
+		{
+			"type": "textarea",
+			"id": "subtext",
+			"label": "label"
+		}
+	],
+	"blocks":[
+		{
+			"name": "Collections",
+			"type": "collection",
+			"settings": [
+				{
+					"type": "collection",
+					"id": "collection_name",
+					"label": "Select Collection"
+				}
+			]
+		}
+	],
     "presets": [
         {
             "category": "Block",

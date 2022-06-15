@@ -4,24 +4,51 @@
             <div class="col-md-7">
                 <div>
                     <h1>
-                        The capsule <br />
-                        that will change <br />
-                        <span>your</span> style
+                       {{section.settings.banner_heading}}
                     </h1>
                 </div>
                 <div class="d-flex align-items-baseline justify-content-start banner__info">
                     {% include 'icon-fill.liquid' %}
                     <p>
-                        The archetype is continued by the <br />
-                        compositional sanguine person
+                        {{section.settings.banner_subheading}}
                     </p>
-                    <a href="" class="btn btn-primary"
-                        >Shop Now
+                    <a href="{{section.settings.banner_link}}" class="btn btn-primary"
+                        >{{section.settings.banner_text_link}}
                         {% include 'icon-arrow-top.liquid' %}
                     </a>
                 </div>
             </div>
             <div class="col-md-5 banner__image">
+                <span class="dot-1">
+                    {% include 'icon-dots.liquid' %}
+                    <a href="{{section.settings.banner_dot_1_link}}">
+                        <p>{% include 'icon-arrow-top.liquid' %} {{section.settings.banner_dot_1_text}} </p>
+                    </a>
+                </span>
+                <span class="dot-2">
+                    {% include 'icon-dots.liquid' %}
+                    <a href="{{section.settings.banner_dot_2_link}}">
+                        <p>{% include 'icon-arrow-top.liquid' %} {{section.settings.banner_dot_2_text}}</p>
+                    </a>
+                </span>
+                <span class="dot-3">
+                    {% include 'icon-dots.liquid' %}
+                    <a href="{{section.settings.banner_dot_3_link}}">
+                        <p>{% include 'icon-arrow-top.liquid' %} {{section.settings.banner_dot_3_text}}</p>
+                    </a>
+                </span>
+                <span class="dot-4">
+                    {% include 'icon-dots.liquid' %}
+                    <a href="{{section.settings.banner_dot_4_link}}">
+                        <p>{% include 'icon-arrow-top.liquid' %} {{section.settings.banner_dot_4_text}}</p>
+                    </a>
+                </span>
+                <span class="dot-5">
+                    {% include 'icon-dots.liquid' %}
+                    <a href="{{section.settings.banner_dot_5_link}}">
+                        <p>{% include 'icon-arrow-top.liquid' %} {{section.settings.banner_dot_5_text}}</p>
+                    </a>
+                </span>
                 <img
                     src="./assets/hop-image.png"
                     width="502px"
@@ -36,7 +63,80 @@
 {% schema %}
 {
     "name": "Main Banner",
-    "settings": [],
+    "settings": [
+        {
+            "type": "html",
+            "id": "banner_heading",
+            "label": "Text Heading"
+        },
+        {
+            "type": "html",
+            "id": "banner_subheading",
+            "label": "Text Subheading"
+        },
+        {
+            "type": "text",
+            "id": "banner_text_link",
+            "label": "Banner link text",
+            "default": "Shop Now"
+        },
+        {
+            "type": "url",
+            "id": "banner_link",
+            "label": "Banner Link"
+        },
+        {
+            "type": "text",
+            "id": "banner_dot_1_text",
+            "label": "Dot 1 text"
+        },
+        {
+            "type": "url",
+            "id": "banner_dot_1_link",
+            "label": "Dot 1 url"
+        },
+        {
+            "type": "text",
+            "id": "banner_dot_2_text",
+            "label": "Dot 2 text"
+        },
+        {
+            "type": "url",
+            "id": "banner_dot_2_link",
+            "label": "Dot 2 url"
+        },
+        {
+            "type": "text",
+            "id": "banner_dot_3_text",
+            "label": "Dot 4 text"
+        },
+        {
+            "type": "url",
+            "id": "banner_dot_3_link",
+            "label": "Dot 3 url"
+        },
+        {
+            "type": "text",
+            "id": "banner_dot_4_text",
+            "label": "Dot 4 text"
+        },
+        {
+            "type": "url",
+            "id": "banner_dot_4_link",
+            "label": "Dot 4 url"
+        },
+        {
+            "type": "text",
+            "id": "banner_dot_5_text",
+            "label": "Dot 5 text"
+        },
+        {
+            "type": "url",
+            "id": "banner_dot_5_link",
+            "label": "Dot 5 url"
+        }
+        
+    ],
     "presets": [
         {
             "category": "header",
