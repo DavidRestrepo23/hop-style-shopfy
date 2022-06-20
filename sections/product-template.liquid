@@ -1,49 +1,7 @@
 {{ "style-product-template.scss.css" | asset_url | stylesheet_tag }}
 
-<section class="product-template-section">
-	<div class="container-fluid h-100">
-		<div class="row px-0">
-			<div class="col-sm-12 col-md-12 col-lg-5 block-product-info h-100">
-				<div class="content-info">
-					<div class="title d-flex justify-content-between mb-3">
-						<div>
-							<h1>{{product.title}}</h1>
-						</div>
-						<div>
-							<img src="{{ 'blow-up.png' | asset_url }}" width="70px" alt="" />
-						</div>
-					</div>
-					<span class="price me-4">{{product.compare_at_price | money}}</span>
-					<span class="compare-price"><s>{{product.price | money}}</s></span>
-					<div class="d-flex justify-content-between align-items-end">
-						<div>{% include 'product-accordeon.liquid' product_desc: product.description %}</div>
-						<div class="featured-image">
-							<img src="{{product.featured_image | img_url: 'medium'}}" width="120" height="170" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="d-flex content-button">
-					<button type="submit" class="btn btn-secondary submit">
-						{% include 'icon-cart.liquid' %} add to cart
-					</button>
-					<button type="button" class="btn btn-secondary">
-						{% include 'icon-favorites.liquid' %} favorite
-					</button>
-				</div>
-			</div>
-			<div class="col-lg-6 d-flex flex-column justify-content-between block-product-image">
-				<div class="content-image slide-single-product">
-					{% include 'product-slide-images.liquid' productMedia: product.media %}
-				</div>
-				<div class="reel-content">
-					<img src="{{'mask-video.png' | asset_url}}" width="100%" alt="">
-				</div>
-			</div>
-			<div class="col-lg-1 content-sizes">
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quae, culpa officiis excepturi sunt minus commodi deleniti ipsum porro corrupti. Quo deserunt dolorum voluptas, sit et temporibus nulla incidunt quidem!
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
+{% include 'product-template-desktop.liquid' product: product %}
+
+<div class="d-md-none">
+	{% include 'product-template-mobile.liquid' product: product %}
+</div>

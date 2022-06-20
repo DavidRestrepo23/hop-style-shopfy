@@ -7,7 +7,7 @@
                        {{section.settings.banner_heading}}
                     </h1>
                 </div>
-                <div class="d-flex align-items-baseline justify-content-start banner__info">
+                <div class="d-md-flex align-items-baseline justify-content-start banner__info">
                     {% include 'icon-fill.liquid' %}
                     <p>
                         {{section.settings.banner_subheading}}
@@ -50,7 +50,7 @@
                     </a>
                 </span>
                 <img
-                    src="./assets/hop-image.png"
+                    src="{{ section.settings.image_banner | img_url: '502x745' }}"
                     width="502px"
                     height="745px"
                     alt=""
@@ -73,6 +73,11 @@
             "type": "html",
             "id": "banner_subheading",
             "label": "Text Subheading"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_banner",
+            "label": "Image banner"
         },
         {
             "type": "text",

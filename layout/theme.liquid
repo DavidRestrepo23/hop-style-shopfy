@@ -224,23 +224,47 @@
 				slidesToShow: 4,
 				prevArrow: $(".prev"),
 				nextArrow: $(".next"),
+				responsive:[
+					{
+						breakpoint:899,
+						settings: {
+							slidesToShow: 2,
+        					slidesToScroll: 1
+						}
+					},
+					{
+						breakpoint:767,
+						settings: {
+							slidesToShow: 1,
+        					slidesToScroll: 1
+						}
+					}
+				]
 			})
 			$(".slider-for").slick({
-				autoplay: false,
-				speed: 1100,
+				autoplay: true,
+				speed: 4000,
 				slidesToShow: 1,
 				arrows: false,
 				fade: true,
+				draggable: false,
+				swipe: false,
+				touchMove: false,
             	asNavFor: '.slider-nav'
 			})
+
 			$(".slider-nav").slick({
-				slidesToShow: 5,
+				slidesToShow: 10,
 				slidesToScroll: 1,
 				asNavFor: ".slider-for",
 				dots: false,
+				autoplay: false,
 				focusOnSelect: true,
-				centerMode: true,
+				centerMode: false,
 				arrows: false,
+				draggable: false,
+				swipe: false,
+				touchMove: false,
 				centerPadding: '60px',				
 			})
 		</script>

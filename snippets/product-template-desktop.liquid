@@ -1,0 +1,56 @@
+<section class="product-template-section d-none d-md-block">
+	<div class="container-fluid h-100">
+		<div class="row px-0">
+			<div class="col-md-5 col-lg-5 block-product-info h-100">
+				<div class="content-info">
+					<div class="title d-flex justify-content-between mb-3">
+						<div>
+							<h1>{{product.title}}</h1>
+						</div>
+						<div>
+							<img src="{{ 'blow-up.png' | asset_url }}" width="70px" alt="" />
+						</div>
+					</div>
+					<span class="price me-4">{{product.compare_at_price | money}}</span>
+					<span class="compare-price"><s>{{product.price | money}}</s></span>
+					<div class="d-xl-flex mt-4 justify-content-between align-items-xxl-end">
+						<div>{% include 'product-accordeon.liquid' product_desc: product.description %}</div>
+						<div class="featured-image mt-sm-5 mt-lg-0 text-center">
+							<img src="{{product.featured_image | img_url: 'medium'}}" width="120" height="170" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="d-flex content-button">
+					<button type="submit" class="btn btn-secondary submit">
+						{% include 'icon-cart.liquid' %} add to cart
+					</button>
+					<button type="button" class="btn btn-secondary">
+						{% include 'icon-favorites.liquid' %} favorite
+					</button>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-6 block-product-image">
+				<div class="content-image slide-single-product">
+					{% include 'product-slide-images.liquid' productMedia: product.media %}
+				</div>
+				<div class="reel-content">
+					<img src="{{'mask-video.png' | asset_url}}" width="100%" alt="">
+				</div>
+			</div>
+			<div class="col-md-1 col-lg-1 content-sizes">
+				{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+					<div class="content-size d-flex flex-column align-items-center text-center mt-4">
+						{% for variant in product.variants %}
+							<div class="filter-radio">
+								<input type="radio" name="size" id="size-{{variant.id}}" value="{{variant.id}}">
+								<label for="size-{{variant.id}}">
+									<span>{{variant.title}}</span>
+								</label>
+							</div>
+						{% endfor %}
+					</div>
+				{% endform %}
+			</div>
+		</div>
+	</div>
+</section>

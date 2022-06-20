@@ -2,13 +2,17 @@
 $color-white: #ffffff;
 $color-black: #000000;
 $color-gray-primary: #7b7f89;
-$color-text : #7B7F89;
+$color-text: #7b7f89;
 
 body,
 html {
 	background-color: $color-black;
 	overflow-y: hidden;
 	height: 100%;
+
+	@media(max-width: 767px) {
+		overflow-y: initial;
+	}
 }
 
 .page-container,
@@ -107,9 +111,14 @@ html {
 
 				.accordion-collapse {
 					.accordion-body {
+						padding: 0 0 15px;
 						p {
 							color: $color-gray-primary;
 							margin: 0;
+							font-size: 14px;
+							span {
+								font-size: 14px;
+							}
 						}
 					}
 				}
@@ -139,20 +148,26 @@ html {
 		padding: 0 0;
 		position: relative;
 
+		.slider-for, .slick-list, .slick-track {
+			height: 100% !important;
+			
+		}
+
 		.item-slide {
 			width: 250px;
-			height: 778px !important;
+			height: 100% !important;
 
 			a {
-				height: 778px !important;
+				height: 100% !important;
 				display: flex !important;
 
 				img {
 					object-fit: cover;
+					object-position: top;
 				}
 			}
 
-			@media(min-width:1000px) and (max-width:1350px) {
+			@media (min-width: 1000px) and (max-width: 1350px) {
 				height: auto;
 			}
 		}
@@ -160,27 +175,64 @@ html {
 
 	.content-image {
 		position: relative;
+		height: 100%;
+		max-height: calc(100vh - 200px);
 	}
 
 	.slider-nav {
-		
 		margin: 0 auto;
 		position: absolute;
 		left: 0;
 		right: 0;
 		bottom: 40px;
 
+		.slick-list {
+			display: flex;
+			justify-content: center;
+		}
+
 		.slick-slide {
-			width: 60px !important;
+			width: 62px !important;
+			cursor: pointer;
+
+			&.slick-current {
+				position: relative;
+				border: 2px solid $color-black;
+
+				&::after {
+					background-image: url("{{'plus-image.png' | asset_url }}");
+					background-repeat: no-repeat;
+					background-size: contain;
+					bottom: 0;
+					content: "";
+					height: 14px;
+					left: 0;
+					margin: auto;
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 14px;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					width: 60px;
+					height: 60px;
+					background-color: $color-black;
+					opacity: 0.5;
+					border: 2px solid $color-black;
+				}
+			}
 		}
 
 		.slick-track {
 			margin: 0;
 			display: flex;
 			justify-content: center;
+			transform: none !important;
 		}
 	}
-
 
 	.reel-content {
 		height: 100px;
@@ -193,8 +245,150 @@ html {
 	}
 
 	.content-sizes {
-		background-color: #F2F2F2;
+		background-color: #f2f2f2;
+
+		.filter-radio {
+			position: relative;
+			width: 60px;
+			height: 60px;
+
+			input {
+				appearance: none;
+				-webkit-appearance: none;
+				border: 0;
+				width: auto;
+				height: auto;
+				position: absolute;
+				z-index: 10;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+
+			label {
+				border: 1px solid;
+				width: 60px;
+				height: 60px;
+				text-align: center;
+				font-weight: normal;
+				cursor: pointer;
+				background-color: $color-black;
+				color: $color-white;
+				font-size: 16px;
+				position: relative;
+
+				span {
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 16px;
+					bottom: 0;
+					margin: auto;
+				}
+			}
+
+			input {
+				&:checked + label {
+					background-color: $color-white;
+					border: 2px solid;
+					color: $color-black;
+				}
+			}
+		}
+	}
+	@media(min-width: 1000px) and (max-width:1299px) {
+		.block-product-info {
+			.content-info {
+				padding: 60px 20px 0 17px;
+			}
+
+			.title {
+				h1 {
+					font-size: 35px;
+					line-height: 40px;
+				}
+			}
+
+			span {
+				font-size: 22px;
+			}
+
+			.accordion {
+				width: 100%;
+			}
+		}
+	}
+	@media(min-width: 1300px) and (max-width:1399px) {
+		
+		.block-product-info {
+			padding-top: 30px;
+
+			.content-info {
+				padding: 0 20px 30px 30px;
+			}
+
+			.title {
+				h1 {
+					font-size: 35px;
+					line-height: 40px;
+					padding: 0 100px 0 0;
+				}
+			}
+			span {
+				font-size: 22px;
+			}
+		}
 	}
 
-	
+	@media(min-width: 768px) and (max-width:999px) {
+		.block-product-info {
+			padding: 0;
+
+			.content-info {
+				padding: 79px 20px 50px;
+			}
+
+			.title {
+				h1 {
+					font-size: 30px;
+					line-height: 38px;
+				}
+			}
+
+			span {
+				font-size: 26px;
+			}
+
+			.accordion {
+				width: 100%;
+			}
+
+			.featured-image {
+				display: none;
+			}
+		}
+	}
+
+	@media(max-width: 767px) {
+		.block-product-info {
+			padding-top: 20px;
+
+			.content-info {
+				padding: 0 20px 50px;
+			}
+
+			.title {
+				h1 {
+					font-size: 30px;
+					line-height: 38px;
+					padding: 0 111px 0 0;
+				}
+			}
+
+			span {
+				font-size: 26px;
+			}
+		}
+	}
 }

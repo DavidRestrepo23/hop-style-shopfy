@@ -1,26 +1,27 @@
 <footer>
    <div class="container">
        <div class="row justify-content-between align-items-center row-1">
-        <div class="col-md-3 image-brand">
+        <div class="col-md-3 image-brand text-center mb-4 mb-md-0">
             <img src="{{ 'hop-studio.png' | asset_url }}" width="144px" alt="" />
             {% include 'icon-points.liquid' %}
         </div>
-        <div class="col-md-5 d-flex justify-content-between align-items-center">
+
+        <div class="col-md-5 d-flex justify-content-md-between align-items-center footer-icons pt-3 pt-md-0">
             <img src="{{ 'footer-1.png' | asset_url }}" width="84px" height="auto" alt="">
             <img src="{{ 'footer-2.png' | asset_url }}" width="100px" height="auto" alt="">
             <img src="{{ 'footer-3.png' | asset_url }}" width="176px" height="auto" alt="">
         </div>
-        <hr>
+
        </div>
        <div class="row justify-content-between align-items-center mt-5">
-            <div class="col-md-9 d-flex">
+            <div class="col-12 col-md-9 d-md-flex">
                 <ul class="menu-links">
                     <li><a href="#">Home {% include 'icon-arrow-top.liquid' %}</a></li>
                     <li><a href="#">% Sale {% include 'icon-arrow-top.liquid' %}</a></li>
                     <li><a href="#">Lookbook {% include 'icon-arrow-top.liquid' %}</a></li>
                     <li><a href="#">Order a Call {% include 'icon-arrow-top.liquid' %}</a></li>
                 </ul>
-                <ul class="collections-links">
+                <ul class="collections-links d-none d-md-block">
                     <h4><a href="#">Catalogue {% include 'icon-arrow-top.liquid' %}</a></h4>
                     <li><a href="#">Caps</a></li>
                     <li><a href="#">T-Shirts</a></li>
@@ -29,8 +30,16 @@
                     <li><a href="#">Accesories</a></li>
                     <li><a href="#">Others...</a></li>
                 </ul>
+                <ul class="collections-links social ms-md-5">
+                    <h4><a href="#">Síguenos</a></h4>
+                    <div class="d-flex justify-content-center mt-4">
+                        <li><a href="#">{% include 'icon-instagram.liquid' %}</a></li>
+                        <li><a href="#">{% include 'icon-facebook.liquid' %}</a></li>
+                        <li><a href="#">{% include 'icon-whatsapp.liquid' %}</a></li>
+                    </div>
+                </ul>
             </div>
-            <div class="col-md-3 d-flex justify-content-end">
+            <div class="col-12 col-md-3 d-md-none justify-content-end">
                 <ul class="others-links">
                     <li><a href="#">{% include 'icon-user.liquid' %} Sign In</a></li>
                     <li><a href="#">{% include 'icon-cart.liquid' %} Bag (0)</a></li>
@@ -40,11 +49,13 @@
             </div>
        </div>
        <div class="row justify-content-between mt-5 pt-5 copyright">
-        <div class="col-md-6">
-            <small><a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></small>
+        <div class="col-12 col-md-6 text-center">
+            <small class="d-none d-md-block">© 2022 Hop Style <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></small>
+            <small class="d-md-none"><a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></small>
+            <small class="mt-5 d-md-none copyright-text">© 2022 Hop Style </small>
         </div>
-        <div class="col-md-6 text-end">
-            <small>© 2022 Hop Style . All Rights Reserved</small>
+        <div class="col-12 col-md-6 text-center text-md-end mt-5 mt-md-0 ">
+            <img src="{{ 'payments.png' | asset_url }}" width="250" height="auto" alt="">
         </div>
        </div>
    </div>

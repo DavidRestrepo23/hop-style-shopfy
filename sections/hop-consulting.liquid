@@ -1,7 +1,7 @@
 <section class="hop-consulting-section">
-	<div class="container position-relative pt-5">
+	<div class="container position-relative pt-md-5">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-12 col-md-12 col-lg-6 d-none d-md-block">
 				<img
 					src="{{ 'chat-1.png' | asset_url }}"
 					class="ms-4 mb-5"
@@ -24,14 +24,14 @@
 					alt=""
 				/>
 			</div>
-			<div class="col-md-6">
+			<div class="col-12 col-md-12 col-lg-6">
 				<div class="image-consulting">
 					<img src="{{ 'image-consulting.png' | asset_url }}" alt="" />
 					<h2>
 						schedule <span>image</span> <strong>consulting</strong>
                         <br>
-						<a href="" class="btn btn-primary"
-							>Order call {% include 'icon-arrow-top.liquid' %}</a
+						<a href="{{section.settings.url}}" class="btn btn-primary"
+							>{{section.settings.link_text}} {% include 'icon-arrow-top.liquid' %}</a
 						>
 					</h2>
 				</div>
@@ -43,7 +43,19 @@
 {% schema %}
 {
     "name": "Block Hop consulting",
-    "settings": [],
+    "settings": [
+		{
+			"type": "text",
+			"id": "link_text",
+			"label": "Text Link",
+			"default": "Order call"
+		},
+		{
+			"type": "url",
+			"id": "url",
+			"label": "URL"
+		}
+	],
     "presets": [
         {
             "category": "Block",

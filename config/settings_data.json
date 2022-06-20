@@ -18,6 +18,7 @@
         "settings": {
           "banner_heading": "The capsule <br>                      that will change <br>\n<span>your<\/span> style",
           "banner_subheading": "The archetype is continued by the <br>\ncompositional sanguine person",
+          "image_banner": "shopify:\/\/shop_images\/hop-image.png",
           "banner_text_link": "Shop Now",
           "banner_link": "shopify:\/\/collections\/all",
           "banner_dot_1_text": "Caps",
@@ -77,7 +78,8 @@
           "title": "We turn the\t\t\t\t<a href=\"\/collections\/all\" class=\"btn btn-primary\">Shop Now\n<\/a>\t\t\t\t<strong>perception<\/strong> of <b>style<\/b> <br>\t\t\t\t<span class=\"gray\">and create<\/span> our own <b>interpretation<\/b>",
           "image_1": "shopify:\/\/shop_images\/image-1.png",
           "image_2": "shopify:\/\/shop_images\/Rectangle_37_1.png",
-          "image_3": "shopify:\/\/shop_images\/image-3.png"
+          "image_3": "shopify:\/\/shop_images\/image-3.png",
+          "image_4": "shopify:\/\/shop_images\/Rectangle_37.png"
         }
       },
       "165522536007013167": {
@@ -100,6 +102,8 @@
       "16556803315c3210b8": {
         "type": "hop-consulting",
         "settings": {
+          "link_text": "Order call",
+          "url": "#"
         }
       }
     },

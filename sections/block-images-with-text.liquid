@@ -1,25 +1,35 @@
 <section class="block-images-with-text-section">
 	<div class="container-fluid h-100">
-		<div class="row images">
-			<div class="col-3 px-0">
+		<div class="row d-md-none">
+			<div class="col-12 px-0 mb-5">
+				<img
+					src="{{ section.settings.image_4 | img_url: '1432x760' }}"
+					width="100%"
+					height="auto"
+					alt=""
+				/>
+			</div>
+		</div>
+		<div class="row images d-none d-md-flex">
+			<div class="col-12 col-md-3 px-0">
 				<img
 					src="{{ section.settings.image_1 | img_url: 'large' }}"
-                    class="first"
+                    class="first "
 					width="70%"
 					height="auto"
 					alt=""
 				/>
 			</div>
-			<div class="col-6 text-center">
+			<div class="col-12 col-md-6 text-center">
 				<img
 					src="{{ section.settings.image_2 | img_url: '1432x760' }}"
 					width="100%"
-                    class="second"
+                    class="second "
 					height="auto"
 					alt=""
 				/>
 			</div>
-			<div class="col-3 text-end px-0">
+			<div class="col-12 col-md-3 text-end px-0">
 				<img
 					src="{{ section.settings.image_3 | img_url: 'large' }}"
 					width="70%"
@@ -62,6 +72,11 @@
 			"type": "image_picker",
 			"id": "image_3",
 			"label": "Image Rigth"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_4",
+			"label": "Image Mobile"
 		}
 	],
     "presets": [

@@ -14,6 +14,10 @@ html {
 
 section.with-margin {
 	margin-bottom: 200px;
+
+	@media (max-width: 767px) {
+		margin-bottom: 130px;
+	}
 }
 
 .btn.btn-primary {
@@ -30,6 +34,11 @@ section.with-margin {
 		width: 110px;
 		z-index: 1000;
 		padding: 7px;
+	}
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		font-size: 12px;
+		z-index: 1000;
 	}
 }
 
@@ -302,6 +311,127 @@ header {
 					left: -189px;
 				}
 			}
+
+			@media (min-width: 768px) and (max-width: 899px) {
+				p {
+					font-size: 18px;
+					top: 39px;
+				}
+				.dot-1 {
+					top: 37%;
+    				right: 43%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						right: 29%;
+						top: 30%;
+					}
+				}
+
+				.dot-2 {
+					top: 73%;
+    				left: 19%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						left: 10%;
+						top: 71%;
+					}
+				}
+
+				.dot-3 {
+					top: 87%;
+    				right: 30%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						left: 47%;
+						top: 85%;
+					}
+				}
+
+				.dot-4 {
+					top: 96%;
+    				left: 20%;
+					&:hover {
+						width: 100px;
+						height: 100px;
+						left: 11%;
+						top: 90%;
+					}
+				}
+
+				.dot-5 {
+					top: 117%;
+					right: 40%;
+					&:hover {
+						width: 100px;
+						height: 100px;
+						right: 31%;
+						top: 109%;
+					}
+				}
+				
+			}
+
+			@media (max-width: 767px) {
+				p {
+					font-size: 18px;
+					top: 37px;
+				}
+				.dot-1 {
+					right: 33%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						right: 24%;
+					}
+				}
+
+				.dot-2 {
+					left: 30%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						left: 25%;
+					}
+				}
+
+				.dot-3 {
+					right: 19%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						right: 16%;
+					}
+				}
+
+				.dot-4 {
+					left: 32%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						left: 25%;
+					}
+				}
+
+				.dot-5 {
+					right: 30%;
+
+					&:hover {
+						width: 100px;
+						height: 100px;
+						right: 25%;
+					}
+				}
+			}
 		}
 	}
 
@@ -315,6 +445,56 @@ header {
 				p {
 					font-size: 16px;
 					padding: 0 16px;
+				}
+			}
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		.banner {
+			h1 {
+				font-size: 48px;
+			}
+
+			.banner__info {
+				text-align: center;
+				p {
+					font-size: 16px;
+				}
+			}
+
+			.banner__image {
+				img {
+					width: 100%;
+					height: auto;
+					left: -75px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.banner {
+			h1 {
+				font-size: 48px;
+				text-align: center;
+			}
+
+			.banner__info {
+				text-align: center;
+				p {
+					padding: 24px 30px 20px;
+				}
+			}
+
+			.banner__image {
+				margin: auto;
+				img {
+					width: 100%;
+					height: auto;
+					right: 50px;
+					top: 106px;
+					left: inherit;
 				}
 			}
 		}
@@ -399,6 +579,62 @@ header {
 			}
 		}
 	}
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		h2 {
+			font-size: 32px;
+			padding: 0 20px;
+		}
+
+		p {
+			font-size: 18px;
+			padding: 10px 20px;
+		}
+
+		ul {
+			width: 100%;
+			padding: 0 20px;
+
+			li {
+				width: 100%;
+				font-size: 22px;
+
+				span {
+					font-size: 32px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		h2 {
+			font-size: 32px;
+			padding: 0 20px;
+		}
+
+		p {
+			font-size: 18px;
+			padding: 10px 20px;
+		}
+
+		.reel {
+			display: none;
+		}
+
+		ul {
+			width: 100%;
+			padding: 0 20px;
+
+			li {
+				width: 100%;
+				font-size: 22px;
+
+				span {
+					font-size: 32px;
+				}
+			}
+		}
+	}
 }
 /* /* BLOCK COLLECTION **/
 
@@ -451,6 +687,20 @@ header {
 			padding: 0 69px;
 		}
 	}
+	@media (min-width: 768px) and (max-width: 899px) {
+		padding: 0 0 60px !important;
+
+		h2 {
+			font-size: 44px;
+		}
+	}
+	@media (max-width: 767px) {
+		padding: 0 0 20px !important;
+
+		h2 {
+			font-size: 44px;
+		}
+	}
 }
 
 /*COLLECTIONS HOME*/
@@ -500,6 +750,19 @@ header {
 			}
 		}
 	}
+
+	@media (max-width: 767px) {
+		padding: 60px 0;
+
+		.collections-item {
+			.item-info {
+				span {
+					font-size: 18px;
+					left: 61px;
+				}
+			}
+		}
+	}
 }
 
 .hop-consulting-section {
@@ -528,6 +791,41 @@ header {
 			}
 			strong {
 				font-weight: 900;
+			}
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 899px) {
+		padding-bottom: 0;
+
+		.image-consulting {
+			position: inherit;
+			h2 {
+				right: 0;
+				left: 0;
+				bottom: 330px;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		padding-bottom: 0;
+		.image-consulting {
+			position: inherit;
+
+			h2 {
+				font-size: 42px;
+				text-align: center;
+				left: 0;
+				right: 0;
+				bottom: 60px;
+			}
+
+			img {
+				width: 100%;
 			}
 		}
 	}
@@ -606,6 +904,24 @@ header {
 				svg {
 					margin-right: 10px;
 				}
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		padding: 126px 0 0;
+
+		.slider-products-home {
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.product-content {
+			.price-content {
+				width: 100%;
 			}
 		}
 	}
@@ -711,6 +1027,12 @@ footer {
 				color: $color-gray-primary;
 			}
 		}
+
+		&.social {
+			svg {
+				margin-right: 10px;
+			}
+		}
 	}
 
 	.others-links {
@@ -743,6 +1065,64 @@ footer {
 			color: $color-gray-primary;
 			font-weight: 400;
 			font-size: 18px;
+		}
+	}
+
+	@media(max-width: 767px) {
+
+		.row-1{
+			border-bottom: none !important;
+		}
+
+		.footer-icons {
+			border-top: 1px solid $color-gray-primary;
+			justify-content: space-around;
+
+			img {
+				width: 60px;
+				height: auto;
+			}
+		}
+
+		.collections-links {
+			h4 {
+				width: 100%;
+			}
+
+			&::after {
+				display: none;
+			}
+		}
+
+		.social {
+			margin: 0;
+			text-align: center;
+			margin: 60px 0;
+
+			li {
+				margin: 0 20px;
+			}
+		}
+
+		.menu-links {
+			margin-right: 0;
+			margin-left: 0;
+			padding: 0 60px;
+
+			li {
+				width: 100%;
+			}
+		}
+
+		.others-links {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		.copyright-text {
+			position: relative;
+			top: 20px;
 		}
 	}
 }
