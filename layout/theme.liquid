@@ -209,6 +209,12 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
+
 		<script>
 			$(".slider-products-home").slick({
 				centerMode: true,
@@ -216,8 +222,26 @@
 				autoplay: false,
 				speed: 1100,
 				slidesToShow: 4,
-				prevArrow: $('.prev'),
-      			nextArrow: $('.next'),
+				prevArrow: $(".prev"),
+				nextArrow: $(".next"),
+			})
+			$(".slider-for").slick({
+				autoplay: false,
+				speed: 1100,
+				slidesToShow: 1,
+				arrows: false,
+				fade: true,
+            	asNavFor: '.slider-nav'
+			})
+			$(".slider-nav").slick({
+				slidesToShow: 5,
+				slidesToScroll: 1,
+				asNavFor: ".slider-for",
+				dots: false,
+				focusOnSelect: true,
+				centerMode: true,
+				arrows: false,
+				centerPadding: '60px',				
 			})
 		</script>
 	</body>

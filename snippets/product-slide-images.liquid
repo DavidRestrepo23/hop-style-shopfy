@@ -1,0 +1,14 @@
+<div class="slider-for">
+	{% for media in productMedia %}
+	<div class="item-slide">
+		<a href="{{ media | img_url: 'master' }}"
+			><img src="{{ media | img_url: 'master' }}" width="100%" height="auto" title="img" alt="img"
+		/></a>
+	</div>
+	{% endfor %}
+</div>
+<div class="slider-nav">
+    {% for media in productMedia %}
+        <div><img src="{{ media | img_url: '60x60' }}" /></div>
+    {% endfor %}
+</div>

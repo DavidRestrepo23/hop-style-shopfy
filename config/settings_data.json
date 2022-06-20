@@ -35,6 +35,12 @@
       "16551697409ba64f9f": {
         "type": "block-collections",
         "blocks": {
+          "5f720f74-a959-4333-af79-c8d5d268bdb2": {
+            "type": "collection",
+            "settings": {
+              "collection_name": "t-shirts"
+            }
+          },
           "4d5c8158-98f5-4fcf-8efa-712e04442a80": {
             "type": "collection",
             "settings": {
@@ -47,12 +53,6 @@
               "collection_name": "jogger"
             }
           },
-          "5f720f74-a959-4333-af79-c8d5d268bdb2": {
-            "type": "collection",
-            "settings": {
-              "collection_name": "t-shirts"
-            }
-          },
           "2d09b6ad-6e25-4ee3-8ad5-378a5ada8229": {
             "type": "collection",
             "settings": {
@@ -61,9 +61,9 @@
           }
         },
         "block_order": [
+          "5f720f74-a959-4333-af79-c8d5d268bdb2",
           "4d5c8158-98f5-4fcf-8efa-712e04442a80",
           "e7265299-f138-4287-abba-a6b680457afd",
-          "5f720f74-a959-4333-af79-c8d5d268bdb2",
           "2d09b6ad-6e25-4ee3-8ad5-378a5ada8229"
         ],
         "settings": {
@@ -89,11 +89,16 @@
         "type": "products-slide-home",
         "settings": {
           "heading_title": "New In Stock",
-          "collection": "new-arrivals"
+          "collection": "jogger"
         }
       },
       "16552371285558e527": {
         "type": "footer",
+        "settings": {
+        }
+      },
+      "16556803315c3210b8": {
+        "type": "hop-consulting",
         "settings": {
         }
       }
@@ -103,6 +108,7 @@
       "16551697409ba64f9f",
       "1655171411cec64c5f",
       "165522536007013167",
+      "16556803315c3210b8",
       "1655234983b7f065ab",
       "16552371285558e527"
     ]

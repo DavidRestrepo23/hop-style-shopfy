@@ -159,7 +159,7 @@ header {
 				right: 51%;
 				z-index: 10;
 				cursor: pointer;
-				transition: .2s;
+				transition: 0.2s;
 
 				&:hover {
 					width: 146px;
@@ -169,7 +169,7 @@ header {
 					border-radius: 50%;
 					top: 16%;
 					right: 41%;
-					transition: .2s;
+					transition: 0.2s;
 
 					svg.dots {
 						opacity: 0;
@@ -184,7 +184,7 @@ header {
 			.dot-2 {
 				position: absolute;
 				top: 60%;
-    			left: 16%;
+				left: 16%;
 				z-index: 10;
 				cursor: pointer;
 
@@ -195,8 +195,8 @@ header {
 					backdrop-filter: blur(30px);
 					border-radius: 50%;
 					top: 56%;
-					left: 8%;				
-					transition: .2s;
+					left: 8%;
+					transition: 0.2s;
 
 					svg.dots {
 						opacity: 0;
@@ -211,7 +211,7 @@ header {
 			.dot-3 {
 				position: absolute;
 				top: 72%;
-    			right: 36%;
+				right: 36%;
 				z-index: 10;
 				cursor: pointer;
 
@@ -222,8 +222,8 @@ header {
 					backdrop-filter: blur(30px);
 					border-radius: 50%;
 					top: 67%;
-    				right: 31%;		
-					transition: .2s;
+					right: 31%;
+					transition: 0.2s;
 
 					svg.dots {
 						opacity: 0;
@@ -238,7 +238,7 @@ header {
 			.dot-4 {
 				position: absolute;
 				top: 83%;
-    			left: 17%;
+				left: 17%;
 				z-index: 10;
 				cursor: pointer;
 
@@ -250,7 +250,7 @@ header {
 					border-radius: 50%;
 					top: 78%;
 					left: 12%;
-					transition: .2s;
+					transition: 0.2s;
 
 					svg.dots {
 						opacity: 0;
@@ -277,7 +277,7 @@ header {
 					border-radius: 50%;
 					top: 90%;
 					right: 37%;
-					transition: .2s;
+					transition: 0.2s;
 
 					svg.dots {
 						opacity: 0;
@@ -294,11 +294,11 @@ header {
 				top: 150px;
 				left: -141px;
 
-				@media(min-width: 1200px) and (max-width: 1399px) {
+				@media (min-width: 1200px) and (max-width: 1399px) {
 					left: -175px;
 				}
 
-				@media(min-width: 900px) and (max-width: 1199px) {
+				@media (min-width: 900px) and (max-width: 1199px) {
 					left: -189px;
 				}
 			}
@@ -448,7 +448,7 @@ header {
 
 		h2 {
 			font-size: 45px;
-			padding: 0 0;
+			padding: 0 69px;
 		}
 	}
 }
@@ -473,7 +473,11 @@ header {
 			left: 0;
 			width: 100%;
 			height: 120px;
-			background: linear-gradient(180deg, rgba(17, 17, 18, 0) 0%, #111112 113.59%);
+			background: linear-gradient(
+				180deg,
+				rgba(17, 17, 18, 0) 0%,
+				#111112 113.59%
+			);
 
 			span {
 				font-weight: 400;
@@ -481,7 +485,7 @@ header {
 				color: $color-white;
 				text-transform: uppercase;
 				left: 42px;
-    			bottom: 35px;
+				bottom: 35px;
 				position: absolute;
 			}
 		}
@@ -493,6 +497,37 @@ header {
 				span {
 					font-size: 16px;
 				}
+			}
+		}
+	}
+}
+
+.hop-consulting-section {
+	background-color: $color-black;
+	padding-bottom: 100px;
+
+	.image-consulting {
+		position: absolute;
+		right: -6%;
+		bottom: -100px;
+
+		img {
+			width: 597px;
+		}
+
+		h2 {
+			bottom: 33px;
+			color: $color-white;
+			font-size: 61px;
+			font-weight: 400;
+			position: absolute;
+			right: 11%;
+			text-align: center;
+			span {
+				color: $color-gray-primary;
+			}
+			strong {
+				font-weight: 900;
 			}
 		}
 	}
@@ -547,7 +582,11 @@ header {
 		position: relative;
 		.price-content {
 			align-items: center;
-			background: linear-gradient(180deg, rgba(17, 17, 18, 0) 0%, #111112 113.59%);
+			background: linear-gradient(
+				180deg,
+				rgba(17, 17, 18, 0) 0%,
+				#111112 113.59%
+			);
 			display: flex;
 			position: relative;
 			top: -92px;
@@ -563,7 +602,7 @@ header {
 				left: 23px;
 				display: flex;
 				align-items: center;
-				
+
 				svg {
 					margin-right: 10px;
 				}
