@@ -2,9 +2,14 @@
 	<div class="container position-relative">
 		<div class="row justify-content-between">
 			<div class="col-md-6 col-lg-5 col-xl-5 col-xxl-4">
+				<div class="pulse my-5 d-md-none">
+					<img src="{{ 'reel.png' | asset_url }}" width="110px" height="auto" alt="Reel" class="reel">
+				</div>
 				<h2>{{section.settings.title}}</h2>
 				<div class="d-flex align-items-center">
-					<img src="{{ 'reel.png' | asset_url }}" width="80px" height="auto" alt="Reel" class="reel">
+					<div class="pulse d-none d-md-block">
+						<img src="{{ 'reel.png' | asset_url }}" width="80px" height="auto" alt="Reel" class="reel">
+					</div>
 					<p>
 						{{section.settings.subtext}}
 					</p>
