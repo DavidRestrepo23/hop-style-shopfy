@@ -13,10 +13,13 @@
 					{% if section.settings.collection %}
 						{% for product in collections[section.settings.collection].products %}
 							<div>
-								<a href="{{product.url}}" class="product-content">
-									<img class="lazyload" data-src="{{product.featured_image.src | img_url: '300x'}}" alt="{{product.title}}" />
-									<div class="price-content">
-										<span class="price"> {% include 'icon-cart.liquid' %} {{product.price | money}}</span>
+								<a href="{{product.url}}">
+									<div class="image-box">
+										<img class="lazyload" data-src="{{product.featured_image.src | img_url: '300x'}}" alt="{{product.title}}" />
+										<div class="price-content">
+											<span class="price"> {% include 'icon-cart.liquid' %} {{product.price | money}}</span>
+											<span class="fav">{% include 'icon-fav.liquid' %} </span>
+										</div>
 									</div>
 								</a>
 							</div>

@@ -10,7 +10,7 @@ html {
 	overflow-y: hidden;
 	height: 100%;
 
-	@media(max-width: 767px) {
+	@media (max-width: 767px) {
 		overflow-y: initial;
 	}
 }
@@ -20,6 +20,12 @@ html {
 #shopify-section-product-template,
 .product-template-section {
 	height: 100% !important;
+}
+
+header {
+	.nav {
+		position: inherit !important;
+	}
 }
 
 .product-template-section {
@@ -141,6 +147,11 @@ html {
 				background-color: #1e1e1e;
 				color: $color-white;
 			}
+
+			svg {
+				position: relative;
+				top: -3px;
+			}
 		}
 	}
 
@@ -148,9 +159,10 @@ html {
 		padding: 0 0;
 		position: relative;
 
-		.slider-for, .slick-list, .slick-track {
+		.slider-for,
+		.slick-list,
+		.slick-track {
 			height: 100% !important;
-			
 		}
 
 		.item-slide {
@@ -236,16 +248,30 @@ html {
 
 	.reel-content {
 		height: 100px;
+		position: relative;
 
 		img {
 			height: 100%;
 			object-fit: cover;
 			object-position: top;
 		}
+
+		.reel {
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			margin: auto;
+			width: 48px;
+			height: 48px;
+		}
 	}
 
 	.content-sizes {
 		background-color: #f2f2f2;
+		position: relative;
 
 		.filter-radio {
 			position: relative;
@@ -264,6 +290,7 @@ html {
 				right: 0;
 				top: 0;
 				bottom: 0;
+				cursor: pointer;
 			}
 
 			label {
@@ -296,8 +323,15 @@ html {
 				}
 			}
 		}
+
+		.share-link {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 30px;
+		}
 	}
-	@media(min-width: 1000px) and (max-width:1299px) {
+	@media (min-width: 1000px) and (max-width: 1299px) {
 		.block-product-info {
 			.content-info {
 				padding: 0 20px 0 17px;
@@ -319,8 +353,7 @@ html {
 			}
 		}
 	}
-	@media(min-width: 1300px) and (max-width:1399px) {
-		
+	@media (min-width: 1300px) and (max-width: 1399px) {
 		.block-product-info {
 			padding-top: 30px;
 
@@ -341,7 +374,7 @@ html {
 		}
 	}
 
-	@media(min-width: 768px) and (max-width:999px) {
+	@media (min-width: 768px) and (max-width: 999px) {
 		.block-product-info {
 			padding: 0;
 
@@ -370,7 +403,7 @@ html {
 		}
 	}
 
-	@media(max-width: 767px) {
+	@media (max-width: 767px) {
 		.block-product-info {
 			padding-top: 20px;
 
@@ -390,5 +423,59 @@ html {
 				font-size: 26px;
 			}
 		}
+	}
+}
+
+.pulse {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: transparent;
+	position: relative;
+	margin: auto;
+	top: -85px;
+
+	@media (max-width: 767px) {
+		width: 110px;
+		height: 110px;
+	}
+}
+
+.pulse::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	animation-name: pulse;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+.pulse::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	animation-name: pulse;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 0;
+	}
+	10% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(2.3);
+		opacity: 0;
 	}
 }

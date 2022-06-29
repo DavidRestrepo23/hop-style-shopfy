@@ -25,7 +25,7 @@
 						{% include 'icon-cart.liquid' %} add to cart
 					</button>
 					<button type="button" class="btn btn-secondary">
-						{% include 'icon-favorites.liquid' %} favorite
+						{% include 'icon-fav-black.liquid' %} favorite
 					</button>
 				</div>
 			</div>
@@ -35,10 +35,14 @@
 				</div>
 				<div class="reel-content">
 					<img src="{{'mask-video.png' | asset_url}}" width="100%" alt="">
+					<div class="pulse">
+						<a href="#"><img class="reel" src="{{'reel-2.png' | asset_url}}" alt=""></a>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-1 col-lg-1 content-sizes">
-				{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+				<div>
+					{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 					<div class="content-size d-flex flex-column align-items-center text-center mt-4">
 						{% for variant in product.variants %}
 							<div class="filter-radio">
@@ -50,6 +54,10 @@
 						{% endfor %}
 					</div>
 				{% endform %}
+				</div>
+				<div class="text-center share-link">
+					<a href="#">{% include 'icon-share.liquid' %}</a>
+				</div>
 			</div>
 		</div>
 	</div>

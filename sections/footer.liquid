@@ -1,7 +1,7 @@
 <footer>
    <div class="container">
-       <div class="row justify-content-between align-items-center row-1">
-        <div class="col-md-3 image-brand text-center mb-4 mb-md-0">
+       <div class="row justify-content-between align-items-center">
+        <div class="col-md-3 image-brand text-center text-md-start mb-4 mb-md-0">
             <img src="{{ 'hop-studio.png' | asset_url }}" width="144px" alt="" />
             {% include 'icon-points.liquid' %}
         </div>
@@ -11,18 +11,18 @@
             <img src="{{ 'footer-2.png' | asset_url }}" width="100px" height="auto" alt="">
             <img src="{{ 'footer-3.png' | asset_url }}" width="176px" height="auto" alt="">
         </div>
-
        </div>
+       <hr class="divider">
        <div class="row justify-content-between align-items-center mt-5">
             <div class="col-12 col-md-9 d-md-flex">
                 <ul class="menu-links">
-                    <li><a href="#">Home {% include 'icon-arrow-top.liquid' %}</a></li>
-                    <li><a href="#">% Sale {% include 'icon-arrow-top.liquid' %}</a></li>
-                    <li><a href="#">Lookbook {% include 'icon-arrow-top.liquid' %}</a></li>
-                    <li><a href="#">Order a Call {% include 'icon-arrow-top.liquid' %}</a></li>
+                    <a href="#"><li>Home {% include 'icon-arrow-top.liquid' %}</li></a>
+                    <a href="#"><li>% Sale {% include 'icon-arrow-top.liquid' %}</li></a>
+                    <a href="#"><li>Lookbook {% include 'icon-arrow-top.liquid' %}</li></a>
+                    <a href="#"><li>Order a Call {% include 'icon-arrow-top.liquid' %}</li></a>
                 </ul>
                 <ul class="collections-links d-none d-md-block">
-                    <h4><a href="#">Catalogue {% include 'icon-arrow-top.liquid' %}</a></h4>
+                    <a href="#"><h4>Catalogue {% include 'icon-arrow-top.liquid' %}</h4></a>
                     <li><a href="#">Caps</a></li>
                     <li><a href="#">T-Shirts</a></li>
                     <li><a href="#">Joggers</a></li>
@@ -30,16 +30,16 @@
                     <li><a href="#">Accesories</a></li>
                     <li><a href="#">Others...</a></li>
                 </ul>
-                <ul class="collections-links social ms-md-5">
+                <ul class="collections-links social">
                     <h4><a href="#">Síguenos</a></h4>
-                    <div class="d-flex justify-content-center mt-4">
-                        <li><a href="#">{% include 'icon-instagram.liquid' %}</a></li>
-                        <li><a href="#">{% include 'icon-facebook.liquid' %}</a></li>
-                        <li><a href="#">{% include 'icon-whatsapp.liquid' %}</a></li>
+                    <div class="d-flex flex-column justify-content-center mt-4">
+                        <li><a href="#">{% include 'icon-instagram.liquid' %} Instagram</a></li>
+                        <li class="mt-3"><a href="#">{% include 'icon-facebook.liquid' %} Facebook</a></li>
+                        <li class="mt-3"><a href="#">{% include 'icon-whatsapp.liquid' %} Whatsapp</a></li>
                     </div>
                 </ul>
             </div>
-            <div class="col-12 col-md-3 d-md-none justify-content-end">
+            <div class="col-12 col-md-3 justify-content-end">
                 <ul class="others-links">
                     <li><a href="#">{% include 'icon-user.liquid' %} Sign In</a></li>
                     <li><a href="#">{% include 'icon-cart.liquid' %} Bag (0)</a></li>
@@ -49,7 +49,7 @@
             </div>
        </div>
        <div class="row justify-content-between mt-5 pt-5 copyright">
-        <div class="col-12 col-md-6 text-center">
+        <div class="col-12 col-md-6 text-center text-md-start">
             <small class="d-none d-md-block">© 2022 Hop Style <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></small>
             <small class="d-md-none"><a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a><br>© 2022 Hop Style s</small>
  
