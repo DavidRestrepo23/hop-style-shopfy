@@ -64,9 +64,7 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		{{
-			"style-custom.scss.css" | asset_url | stylesheet_tag
-		}}
+		{{"style-custom.scss.css" | asset_url | stylesheet_tag}}
 
 		<style>
 			{{ header_font | font_face: font_display: 'swap' }}
@@ -214,6 +212,8 @@
 			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 			crossorigin="anonymous"
 		></script>
+		
+		{{"custom.js" | asset_url | script_tag}}
 
 		<script>
 			$(".slider-products-home").slick({
