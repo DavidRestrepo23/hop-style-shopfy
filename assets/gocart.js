@@ -1135,8 +1135,6 @@
 								this.clearCartDrawer(),
 									t.items.forEach(function (t, r) {
 										var a = t.variant_title
-										console.log(t)
-
 										null === a && (a = "")
 										var o = `
 										

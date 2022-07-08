@@ -28,12 +28,14 @@
 				{% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
 					<div class="content-size d-flex justify-content-center align-items-center text-center my-4">
 						{% for variant in product.variants %}
-							<div class="filter-radio">
-								<input type="radio" name="id" id="size-{{variant.id}}" class="radio-size" value="{{variant.id}}">
-								<label for="size-{{variant.id}}">
-									<span>{{variant.title}}</span>
-								</label>
-							</div>
+							{% if  variant.inventory_quantity > 0 %}
+								<div class="filter-radio">
+									<input type="radio" name="id" id="size-{{variant.id}}" class="radio-size" value="{{variant.id}}">
+									<label for="size-{{variant.id}}">
+										<span>{{variant.title}}</span>
+									</label>
+								</div>
+						{% endif %}
 						{% endfor %}
 					</div>
 					<div class="reel-content">
