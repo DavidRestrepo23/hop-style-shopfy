@@ -75,7 +75,7 @@
       "1655171411cec64c5f": {
         "type": "block-images-with-text",
         "settings": {
-          "title": "We turn the\t\t\t\t<a href=\"\/collections\/all\" class=\"btn btn-primary\">Shop Now\n<\/a>\t\t\t\t<strong>perception<\/strong> of <b>style<\/b> <br>\t\t\t\t<span class=\"gray\">and create<\/span> our own <b>interpretation<\/b>",
+          "title": "We turn the\t\t\t\t<a href=\"\/collections\/all\" class=\"btn btn-primary with-arrow\">Shop Now\n<\/a>\t\t\t\t<strong>perception<\/strong> of <b>style<\/b> <br>\t\t\t\t<span class=\"gray\">and create<\/span> our own <b>interpretation<\/b>",
           "image_1": "shopify:\/\/shop_images\/image-1.png",
           "image_2": "shopify:\/\/shop_images\/Rectangle_37_1.png",
           "image_3": "shopify:\/\/shop_images\/image-3.png",
@@ -104,6 +104,11 @@
         "settings": {
           "link_text": "Order call",
           "url": "#"
+        }
+      },
+      "go-cart": {
+        "type": "go-cart",
+        "settings": {
         }
       }
     },

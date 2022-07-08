@@ -21,6 +21,9 @@ html {
 .product-template-section {
 	height: 100% !important;
 }
+form {
+	height: 100%;
+}
 
 header {
 	position: relative;
@@ -143,10 +146,15 @@ header {
 			border-radius: 0;
 			text-transform: uppercase;
 			font-size: 16px;
-
 			&.submit {
 				background-color: #1e1e1e;
 				color: $color-white;
+				transition: all 400ms ease;
+				
+				&:hover {
+					background-color: #111111;
+					transition: all 400ms ease;
+				}
 			}
 
 			svg {

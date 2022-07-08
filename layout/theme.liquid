@@ -64,7 +64,7 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		{{"style-custom.scss.css" | asset_url | stylesheet_tag}}
+		{{ "style-custom.scss.css" | asset_url | stylesheet_tag }}
 
 		<style>
 			{{ header_font | font_face: font_display: 'swap' }}
@@ -155,6 +155,8 @@
 			}
 		</script>
 
+		{{ "go-cart.scss.css" | asset_url | stylesheet_tag }}
+
 		{{
 			content_for_header
 		}}
@@ -197,6 +199,8 @@
 			</li>
 		</ul>
 
+		{%- section 'go-cart' -%}
+
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 			referrerpolicy="no-referrer"
@@ -212,8 +216,13 @@
 			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 			crossorigin="anonymous"
 		></script>
-		
-		{{"custom.js" | asset_url | script_tag}}
+
+		{{ "custom.js" | asset_url | script_tag }}
+		{{ "gocart.js" | asset_url | script_tag }}
+
+		<script>
+			var goCart = new GoCart()
+		</script>
 
 		<script>
 			$(".slider-products-home").slick({
@@ -224,22 +233,22 @@
 				slidesToShow: 4,
 				prevArrow: $(".prev"),
 				nextArrow: $(".next"),
-				responsive:[
+				responsive: [
 					{
-						breakpoint:899,
+						breakpoint: 899,
 						settings: {
 							slidesToShow: 2,
-        					slidesToScroll: 1
-						}
+							slidesToScroll: 1,
+						},
 					},
 					{
-						breakpoint:767,
+						breakpoint: 767,
 						settings: {
 							slidesToShow: 1,
-        					slidesToScroll: 1
-						}
-					}
-				]
+							slidesToScroll: 1,
+						},
+					},
+				],
 			})
 			$(".slider-for").slick({
 				autoplay: true,
@@ -250,7 +259,7 @@
 				draggable: false,
 				swipe: false,
 				touchMove: false,
-            	asNavFor: '.slider-nav'
+				asNavFor: ".slider-nav",
 			})
 
 			$(".slider-nav").slick({
@@ -265,7 +274,7 @@
 				draggable: false,
 				swipe: false,
 				touchMove: false,
-				centerPadding: '60px',				
+				centerPadding: "60px",
 			})
 		</script>
 	</body>

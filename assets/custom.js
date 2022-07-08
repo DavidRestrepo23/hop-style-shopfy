@@ -18,3 +18,12 @@ $(".hamburger").click(function () {
         `)
 	}
 })
+
+
+$(".gocart-button-mobile").click(function(){
+    $(".go-cart__trigger").click();
+});
+
+$(".radio-size").click(function(){
+    $(".js-go-cart-add-to-cart").removeAttr('disabled');
+})

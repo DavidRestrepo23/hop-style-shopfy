@@ -9,8 +9,8 @@
 					alt="Hop Style"
 			/></a>
 		</div>
-		<div class="px-4 cart">
-			<a href="/cart">{% include 'icon-cart-mobile.liquid' %} <span>0</span> </a>
+		<div class="px-4 cart gocart-button-mobile">
+			{% include 'icon-cart-mobile.liquid' %} <span class="gocart-button-mobile-span"></span>
 		</div>
 		{% include 'sidebar-menu.liquid' %}
 	</nav>
@@ -48,7 +48,7 @@
 			</div>
 			<div class="col-md-2 text-center nav__item">
 				<span>
-					<a href="/cart">{% include 'icon-cart.liquid' %} Bag(0)</a>
+					{%- include "go-cart-button" -%}
 				</span>
 			</div>
 			<div class="col-md-1 text-center nav__item">
