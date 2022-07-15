@@ -28,21 +28,20 @@
         <div class="go-cart-drawer__content js-go-cart-drawer-content"></div>
         <!--end go cart drawer content-->
 
-        <!--go cart drawer subtotal-->
-        <div class="go-cart-drawer__subtotal">
-            <span>Subtotal: </span>
-            <span class="go-cart-drawer__subtotal-price js-go-cart-drawer-subtotal"></span>
-        </div>
-        <!--end go cart drawer subtotal-->
         <!-- <div class="content-shipping-text">
             <p>Shipping, taxes, and discounts calculated at checkout.</p>
         </div> -->
         <!--go cart drawer buttons-->
         <div class="go-cart-drawer__footer js-go-cart-drawer-footer">
-
-            <a href="/checkout/" class="go-cart__button">
-                Checkout
-            </a>
+            <div class="go-cart-drawer__subtotal item">
+                <span class="total-title">Total: </span>
+                <span class="go-cart-drawer__subtotal-price js-go-cart-drawer-subtotal"></span>
+            </div>
+            <div class="item">
+                <a href="/checkout/" class="go-cart__button">
+                {% include 'icon-checkout.liquid' %} Checkout
+                </a>
+            </div>
 
         </div>
         <!--end go cart drawer buttons-->
