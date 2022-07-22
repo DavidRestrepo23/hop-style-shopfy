@@ -1,0 +1,24 @@
+<div
+	class="modal fade"
+	id="userModal"
+	tabindex="-1"
+	aria-labelledby="userModalLabel"
+	aria-hidden="true"
+>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body form-user">
+        <div class="text-center mb-3">
+            <img src="{{ 'hop-logo.png' | asset_url }}" alt="">
+            <hr>
+            <span class="title">Great to have you back!</span>
+        </div>
+
+        <div id="form-login">
+          {% include 'form-login.liquid' %}
+        </div>
+        
+			</div>
+		</div>
+	</div>
+</div>
