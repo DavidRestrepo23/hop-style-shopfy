@@ -289,24 +289,20 @@ header {
 
 			&.icons {
 				li {
+					border-radius: 50%;
+					cursor: pointer;
+					height: 40px;
 					margin: 0 5px;
-					a {
-						transition: all 400ms ease;
-						width: 48px;
-						height: 48px;
-						padding: 8px;
-						border-radius: 50%;
-						&:hover {
-							transition: all 400ms ease;
-							background: rgba(255, 255, 255, 0.1);
-							text-align: center;
-							padding: 8px;
-						}
+					padding: 6px;
+					text-align: center;
+					transition: all 400ms ease;
+					width: 40px;
 
-						svg {
-							position: relative;
-							top: -2px;
-						}
+					&:hover {
+						transition: all 400ms ease;
+						background: rgba(255, 255, 255, 0.1);
+						text-align: center;
+						padding: 6px;
 					}
 				}
 			}
@@ -349,6 +345,101 @@ header {
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+#Huratips-Pagination {
+	a {
+		color: #111111 !important;
+	}
+}
+
+.page-search {
+	background-color: #111111;
+	h1 {
+		color: $color-white;
+	}
+
+	.pagination {
+		border-top: 1px solid;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: 30px 0 30px;
+		.pagination__text {
+			color: $color-white;
+		}
+		.btn {
+			border: 0;
+		}
+	}
+}
+
+.search-bar-section {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.4s;
+
+	&.open {
+		visibility: visible;
+		opacity: 1;
+		transition: opacity 0.4s;
+	}
+
+	&::before {
+		background-color: $color-black;
+		content: "";
+		height: 100%;
+		opacity: 0.9;
+		position: absolute;
+		width: 100%;
+	}
+
+	svg {
+		cursor: pointer;
+		position: absolute;
+		right: 10%;
+		top: 20%;
+	}
+
+	.search-page-form {
+		width: 100%;
+
+		.input-group,
+		.input-group__field,
+		input {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.input-group {
+			max-width: 65%;
+		}
+
+		input {
+			background-color: transparent;
+			border-bottom: 1px solid $color-white;
+			border-top: 0;
+			border-left: 0;
+			border-right: 0;
+			color: $color-white;
+			padding: 20px 0;
+
+			&::placeholder {
+				color: $color-white;
+			}
+
+			&:focus-visible {
+				outline: 0;
 			}
 		}
 	}
@@ -1663,7 +1754,7 @@ footer {
 			position: relative;
 			top: -2px;
 		}
-		
+
 		svg {
 			width: 25px;
 			height: 25px;
@@ -1671,7 +1762,6 @@ footer {
 			top: -2px;
 		}
 	}
-
 }
 
 .section-collection-list {
@@ -1737,6 +1827,7 @@ footer {
 			opacity: 0;
 			transition: all 400ms ease;
 			border-top: 1px solid $color-white;
+			width: 100%;
 		}
 
 		&:hover {
@@ -1760,7 +1851,13 @@ footer {
 	border-radius: 0;
 }
 
-.form-user {
+.form-register,
+.form-recover {
+	display: none;
+}
+
+.form-user,
+.form-regitser {
 	padding: 60px;
 
 	.title {
@@ -1773,6 +1870,7 @@ footer {
 		display: flex;
 		flex-direction: column;
 
+		input[type="text"],
 		input[type="email"],
 		input[type="password"] {
 			height: 55px;
@@ -1797,7 +1895,8 @@ footer {
 		text-transform: uppercase;
 	}
 
-	.create-account-link {
+	.create-account-link,
+	.back-login-link {
 		background: #f2f2f2;
 		padding: 10px;
 
@@ -1806,5 +1905,19 @@ footer {
 			text-decoration: underline;
 			cursor: pointer;
 		}
+	}
+}
+
+.recover-passw {
+	background: #f2f2f2 !important;
+	color: $color-black;
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: underline;
+	width: 100%;
+
+	&:hover {
+		color: $color-black;
 	}
 }

@@ -8,16 +8,20 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-body form-user">
-        <div class="text-center mb-3">
-            <img src="{{ 'hop-logo.png' | asset_url }}" alt="">
-            <hr>
-            <span class="title">Great to have you back!</span>
-        </div>
-
-        <div id="form-login">
-          {% include 'form-login.liquid' %}
-        </div>
-        
+				<div class="text-center mb-3">
+					<img src="{{ 'hop-logo.png' | asset_url }}" alt="">
+					<hr>
+					<span class="title">Great to have you back!</span>
+				</div>
+				<div class="form-login" id="form-login">
+					{% include 'form-login.liquid' %}
+				</div>
+				<div class="form-register" id="form-register">
+					{% include 'form-register.liquid' %}
+				</div>
+				<div class="form-recover" id="form-recover">
+					{% include 'form-recover.liquid' %}
+				</div>
 			</div>
 		</div>
 	</div>

@@ -171,6 +171,8 @@
 
 		{% section 'header' %}
 
+		{% include 'search-bar.liquid' %}
+
 		<div class="page-container drawer-page-content" id="PageContainer">
 			<main
 				class="main-content js-focus-hidden"
@@ -197,7 +199,10 @@
 			</li>
 		</ul>
 
+		{% section 'footer' %}
 		{%- section 'go-cart' -%}
+
+		
 
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -214,6 +219,10 @@
 			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 			crossorigin="anonymous"
 		></script>
+
+		{% if template contains 'collection' %}
+			{{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }}
+		{% endif %}
 
 		{{ "custom.js" | asset_url | script_tag }}
 		{{ "gocart.js" | asset_url | script_tag }}

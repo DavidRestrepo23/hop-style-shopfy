@@ -1,3 +1,4 @@
+{% paginate collections[collection.handle].products by 8 %}
 <section class="section-collection mt-5 pt-5">
 	<div class="container h-100">
 		<div class="row h-100">
@@ -6,7 +7,10 @@
 			>
 				<h1>{{ collection.handle }}</h1>
 				<p class="breadcums">
-				 <span>{% include 'icon-home.liquid' %} Home</span> {% include 'icon-chevron-right.liquid' %} <span>Collections</span> {% include 'icon-chevron-right.liquid' %} <span class="handle">{{ collection.handle }}</span>
+					<span>{% include 'icon-home.liquid' %} Home</span> {% include
+					'icon-chevron-right.liquid' %} <span>Collections</span> {% include
+					'icon-chevron-right.liquid' %}
+					<span class="handle">{{ collection.handle }}</span>
 				</p>
 			</div>
 		</div>
@@ -14,8 +18,8 @@
 </section>
 <section class="section-collection-list">
 	<div class="container">
-		<div class="row">
-      {% for product in collections[collection.handle].products %}
+		<div id="Huratips-Loop" class="row">
+			{% for product in collections[collection.handle].products %}
 			<div class="col-12 col-md-3 mb-4">
 				<a href="{{ product.url }}">
 					<div class="image-box">
@@ -31,13 +35,19 @@
 							>
 							<span class="fav">{% include 'icon-fav.liquid' %} </span>
 						</div>
-            <div class="title">
-              {{product.title}}
-            </div>
+						<div class="title">
+							{{ product.title }}
+						</div>
 					</div>
 				</a>
 			</div>
 			{% endfor %}
 		</div>
 	</div>
+	<div id="Huratips-Pagination">
+		{% if paginate.next %}
+			<a href="{{ paginate.next.url }}"></a>
+		{% endif %}  
+	</div>
 </section>
+{% endpaginate %}

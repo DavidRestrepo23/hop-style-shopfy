@@ -94,11 +94,6 @@
           "collection": "jogger"
         }
       },
-      "16552371285558e527": {
-        "type": "footer",
-        "settings": {
-        }
-      },
       "16556803315c3210b8": {
         "type": "hop-consulting",
         "settings": {
@@ -110,6 +105,11 @@
         "type": "go-cart",
         "settings": {
         }
+      },
+      "modal-user": {
+        "type": "modal-user",
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -118,8 +118,7 @@
       "1655171411cec64c5f",
       "165522536007013167",
       "16556803315c3210b8",
-      "1655234983b7f065ab",
-      "16552371285558e527"
+      "1655234983b7f065ab"
     ]
   }
 }

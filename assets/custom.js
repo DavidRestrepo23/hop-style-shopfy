@@ -19,7 +19,6 @@ $(".hamburger").click(function () {
 	}
 })
 
-
 $(".gocart-button-mobile").click(function(){
     $(".go-cart__trigger").click();
 });
@@ -27,3 +26,40 @@ $(".gocart-button-mobile").click(function(){
 $(".radio-size").click(function(){
     $(".js-go-cart-add-to-cart").removeAttr('disabled');
 })
+
+$(".create-account-link").click(function(){
+    $("#form-login").hide();
+    $("#form-register").show();
+    $(".modal-body .title").html("Register")
+})
+
+$(".forgot-password-text").click(function(){
+    $("#form-login").hide();
+    $("#form-recover").show();
+    $(".modal-body .title").html("Recover Password")
+})
+
+$(".back-login-link").click(function(){
+    $("#form-register").hide();
+    $("#form-login").show();
+    $(".modal-body .title").html("Great to have you back!")
+})
+
+$(".recover-passw").click(function(){
+    $("#form-recover").hide();
+    $("#form-login").show();
+    $(".modal-body .title").html("Great to have you back!")
+})
+
+$(".open-search").click(function(){
+    $(".search-bar-section").addClass("open")
+})
+
+$(".close-search").click(function(){
+    $(".search-bar-section").removeClass("open")
+})
+
+var endlessScroll = new Ajaxinate({
+    container: '#Huratips-Loop',
+    pagination: '#Huratips-Pagination'
+});
