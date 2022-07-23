@@ -160,7 +160,8 @@
 		{{
 			content_for_header
 		}}
-	</head>
+	  {% render 'judgeme_core' %}
+</head>
 
 	<body class="template-{{ request.page_type | handle }}">
 		<a class="in-page-link visually-hidden skip-link" href="#MainContent">{{
@@ -284,5 +285,6 @@
 				centerPadding: "60px",
 			})
 		</script>
-	</body>
+	<script src="https://zooomyapps.com/wishlist/ZooomyColl.js" data-shop-id="hopstyle2020.myshopify.com" data-cus-id="{{customer.id}}" data-cus-email="{{customer.email}}" data-cus-name="{{customer.first_name}} {{customer.last_name}}" data-page="{{template}}"></script>
+</body>
 </html>
