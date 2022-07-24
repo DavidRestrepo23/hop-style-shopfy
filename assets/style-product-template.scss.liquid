@@ -34,8 +34,37 @@ header {
 
 .product-template-section {
 	.row {
-		height: 100%;
-		max-height: calc(100% - 100px);
+
+		@media(min-width: 768px) {
+			height: 100%;
+			max-height: calc(100% - 100px);
+		}
+
+		@media(max-width: 767px) {
+
+			.block-product-info {
+				order: 2;
+			}
+
+			.block-product-image {
+				order: 1;
+				margin-top: 70px;
+			}
+
+			.content-sizes {
+				order: 3;
+			}
+
+			.reel-content {
+				order: 4;
+			}
+
+			.content-button {
+				order: 5;
+			}
+
+		}
+	
 	}
 
 	.block-product-info {
@@ -89,6 +118,11 @@ header {
 
 		.accordion {
 			width: 350px;
+
+			@media (max-width: 767px) {
+				width: 100%;
+			}
+
 			.accordion-item {
 				border: 0;
 				border-bottom: 1px solid $color-gray-primary;
@@ -122,6 +156,9 @@ header {
 				.accordion-collapse {
 					.accordion-body {
 						padding: 0 0 15px;
+						height: 56px;
+    					overflow-y: scroll;
+
 						p {
 							color: $color-gray-primary;
 							margin: 0;
@@ -137,8 +174,15 @@ header {
 	}
 
 	.content-button {
-		button {
+
+		@media(min-width: 1000px) {
+			position: absolute;
+			max-width: 41.7%;
 			height: 100px;
+			bottom: 0;
+		}
+
+		button {
 			width: 100%;
 			background-color: $color-white;
 			color: $color-black;
@@ -146,6 +190,7 @@ header {
 			border-radius: 0;
 			text-transform: uppercase;
 			font-size: 16px;
+
 			&.submit {
 				background-color: #1e1e1e;
 				color: $color-white;
@@ -421,6 +466,10 @@ header {
 					font-size: 30px;
 					line-height: 38px;
 					padding: 0 111px 0 0;
+
+					@media(max-width: 767px) {
+						padding: 0 0 0 0;
+					}
 				}
 			}
 
@@ -441,8 +490,7 @@ header {
 	top: -85px;
 
 	@media (max-width: 767px) {
-		width: 110px;
-		height: 110px;
+		top: -85px;
 	}
 }
 
@@ -487,4 +535,30 @@ header {
 
 footer {
 	display: none;
+}
+
+.jdgm-rev-widg {
+	span {
+		color: #fbcd0a !important;
+	}
+	.jdgm-rev__timestamp, .jdgm-rev__author {
+		color: #000000 !important;
+		font-size: 14px !important;
+	}
+
+	.jdgm-widget-actions-wrapper {
+		a {
+			color: #000 !important;
+		}
+	}
+
+	.jdgm-form__reviewer-name-format-container {
+		display: none;
+	}
+
+	.jdgm-rev__header {
+		.jdgm-star {
+			font-size: 16px !important;
+		}
+	}
 }

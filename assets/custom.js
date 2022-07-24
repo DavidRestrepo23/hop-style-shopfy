@@ -59,13 +59,7 @@ $(".close-search").click(function(){
     $(".search-bar-section").removeClass("open")
 })
 
-$(".btn-fav-mob").click(function(){ 
-    $(".zooomypwishmsg").click();
-    let btn = $(".btn-fav-mob i");
-    let old = $(".btn-fav-mob i").attr('class');
-    let fav = $(".zooomypwishmsg i").attr('class');
-    btn.removeClass(old).addClass(fav);
-});
+$(".count-review").html($(".jdgm-histogram__frequency").html())
 
 var endlessScroll = new Ajaxinate({
     container: '#Huratips-Loop',
