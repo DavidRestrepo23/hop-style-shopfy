@@ -23,6 +23,10 @@ $(".gocart-button-mobile").click(function(){
     $(".go-cart__trigger").click();
 });
 
+$(".cart-footer").click(function(){
+   $(".gocart-button-mobile").click();
+});
+
 $(".radio-size").click(function(){
     $(".js-go-cart-add-to-cart").removeAttr('disabled');
 })

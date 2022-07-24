@@ -1422,6 +1422,7 @@ footer {
 
 			a {
 				text-decoration: none;
+				text-transform: capitalize;
 			}
 		}
 	}
@@ -1549,7 +1550,11 @@ footer {
 			margin-bottom: 20px;
 			position: relative;
 
-			a {
+			span {
+				cursor: pointer;
+			}
+
+			a, span{
 				color: $color-white;
 				font-weight: 400;
 				font-size: 18px;
@@ -1567,7 +1572,7 @@ footer {
 			}
 
 			&:hover {
-				a {
+				a, span {
 					color: $color-gray-primary;
 					transition: all 400ms ease;
 				}
