@@ -1356,15 +1356,10 @@ header {
 				left: 23px;
 				display: flex;
 				align-items: center;
-
-				svg {
-					margin-right: 10px;
-				}
 			}
-
-			.fav {
-				position: relative;
-				right: 25px;
+			
+			.zooomywishmsg {
+				right: 30px;
 			}
 		}
 
@@ -1919,5 +1914,101 @@ footer {
 
 	&:hover {
 		color: $color-black;
+	}
+}
+
+#ZoomyWishlistPage {
+	background-color: #111111 !important;
+	padding: 0 30px;
+
+	a.zmsg {
+		margin-top: 30px;
+		color: $color-white !important;
+		font-size: 18px !important;
+	}
+
+	.ZoomyWishlistPageGrid {
+		border: 0;
+		margin: 6px 1%;
+		padding: 0;
+		width: 18%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		.zbodypimg {
+			position: relative;
+
+			.zooomybtn {
+				position: absolute;
+				top: 8px;
+    			right: 10px;
+				line-height: 0;
+			}
+		}
+
+		.zbodytitle {
+			padding: 10px 0 0 0;
+			height: 60px;
+			a {
+				color: $color-gray-primary;
+			}
+		}
+
+		.zprice {
+			color: $color-white;
+			height: 30px;
+		}
+
+		.zbodyinfo {
+			select {
+				display: none;
+			}
+		}
+
+		.addcartbtn {
+			display: none;
+		}
+	}
+}
+
+.zooomy__hhrt {
+	display: none;
+}
+
+#ZooomyList {
+	width: 100% !important;
+
+	label {
+		width: 100% !important;
+	}
+}
+
+.zooomywishmsg {
+	backdrop-filter: blur(30px);
+	background: rgba(255, 255, 255, 0.1);
+	height: 40px;
+	margin: 0;
+	position: relative;
+	right: 0;
+	top: 0;
+	width: 40px;
+	border: 1px solid rgb(211, 211, 211);
+	border-radius: 50%;
+
+	i {
+		position: relative;
+		top: 10px;
+		left: 1px;
+
+		&.fa-heart {
+			&::before {
+				color: $color-black;
+			}
+		}
+
+		&::before {
+			color: $color-white;
+		}
 	}
 }

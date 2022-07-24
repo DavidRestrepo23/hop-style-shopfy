@@ -57,9 +57,9 @@
 							{%- else -%} 
 								{{- 'products.product.sold_out' | t -}} 
 							{%- endif -%}
-						</button>  
-						<button type="button" class="btn btn-secondary">
-							{% include 'icon-favorites.liquid' %} favorite
+						</button>
+						<button type="button" class="btn btn-secondary btn-fav-mob">
+							<i class="fa fa-heart-o" aria-hidden="true"></i> favorite
 						</button>
 					</div>
 				{% endform %}
