@@ -11,6 +11,12 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "sale_link": "",
+          "lookbook_link": "",
+          "order_call_link": "",
+          "facebook_link": "",
+          "instagram_link": "",
+          "wp_link": ""
         }
       },
       "1655168638d0bfbf06": {
@@ -69,7 +75,8 @@
         ],
         "settings": {
           "title": "one more step into the world of <span>our fashion<\/span>",
-          "subtext": "The idea of self-worth, one way or another, is free of art.\t\t\tSublimation monotonously induces destructive."
+          "subtext": "The idea of self-worth, one way or another, is free of art.\t\t\tSublimation monotonously induces destructive.",
+          "url_reel": "https:\/\/www.youtube.com\/embed\/tiw6SSptWKc"
         }
       },
       "1655171411cec64c5f": {
@@ -109,6 +116,20 @@
       "modal-user": {
         "type": "modal-user",
         "settings": {
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "url_reel": "https:\/\/www.youtube.com\/embed\/tiw6SSptWKc"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
         }
       }
     },

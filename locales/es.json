@@ -419,5 +419,8 @@
       "pick_up_available_at_html": "Retiro disponible en <strong>{{ location_name }}<\/strong>",
       "pick_up_unavailable_at_html": "Retiro no disponible actualmente en <strong>{{ location_name }}<\/strong>"
     }
+  },
+  "navigation": {
+    "Home": "Inicio"
   }
 }

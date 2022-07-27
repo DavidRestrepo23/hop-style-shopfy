@@ -895,7 +895,6 @@ header {
 			color: $color-black;
 		}
 	}
-
 	p {
 		color: $color-gray-primary;
 		font-weight: 400;
@@ -1663,6 +1662,25 @@ footer {
 		}
 	}
 }
+
+.reel-modal {
+	.modal-body {
+		height: 650px !important;
+	}
+}
+
+@media(max-width: 767px) {
+	iframe {
+		height: 350px;
+	}
+
+	.reel-modal {
+		.modal-body {
+			height: 350px !important;
+		}
+	}
+}
+
 .pulse {
 	width: 80px;
 	height: 80px;
@@ -1670,6 +1688,7 @@ footer {
 	background: #111111;
 	position: relative;
 	margin: auto;
+	cursor: pointer;
 
 	@media (max-width: 767px) {
 		width: 110px;

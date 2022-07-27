@@ -50,7 +50,7 @@
                     {% include 'icon-cart.liquid' %}
                     {{ product.price | money }}</span
                   >
-                  <span class="fav">{% include 'icon-fav.liquid' %} </span>
+                  <span class="fav">{% render 'ZooomyListWishlistColl', product: product %}</span>
                 </div>
                 <div class="title">
                   {{ product.title }}
