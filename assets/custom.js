@@ -63,6 +63,14 @@ $(".close-search").click(function(){
     $(".search-bar-section").removeClass("open")
 })
 
+$(".language-icon").click(function(){
+    $(".dropdown-selector").toggleClass("open");
+
+    $("select").change(function(){
+        $("#currency_form").submit();
+    })
+})
+
 $(".count-review").html($(".jdgm-histogram__frequency").html())
 
 var endlessScroll = new Ajaxinate({

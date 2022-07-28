@@ -17,8 +17,13 @@
 								<img src="{{ 'blow-up.png' | asset_url }}" width="70px" alt="" />
 							</div>
 						</div>
-						<span class="price me-4">{{product.compare_at_price | money}}</span>
-						<span class="compare-price"><s>{{product.price | money}}</s></span>
+						<span class="price me-4">
+							{% if product.compare_at_price < product.price %}
+								{{ product.compare_at_price | money | replace: ",00", "" }} <s class="ms-2">{{ product.price | money | replace: ",00", "" }}</s>	
+							{% else %}
+								{{ product.price | money | replace: ",00", "" }}
+							{% endif %}
+						</span>
 						<div class="d-xl-flex mt-4 justify-content-between align-items-xxl-end">
 							<div>{% include 'product-accordeon.liquid' product_desc: product.description, product: product %}</div>
 							<div class="featured-image mt-sm-5 mt-lg-0 text-center d-none d-md-block">

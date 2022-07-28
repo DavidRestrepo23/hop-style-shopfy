@@ -48,7 +48,11 @@
                 <div class="price-content">
                   <span class="price">
                     {% include 'icon-cart.liquid' %}
-                    {{ product.price | money }}</span
+                    {% if product.compare_at_price < product.price %}
+                     {{ product.compare_at_price | money | replace: ",00", "" }} <s class="ms-2">{{ product.price | money | replace: ",00", "" }}</s>	
+                    {% else %}
+                      {{ product.price | money | replace: ",00", "" }}
+                    {% endif %}
                   >
                   <span class="fav">{% render 'ZooomyListWishlistColl', product: product %}</span>
                 </div>

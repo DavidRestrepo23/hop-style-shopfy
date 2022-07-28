@@ -156,8 +156,11 @@ header {
 				.accordion-collapse {
 					.accordion-body {
 						padding: 0 0 15px;
-						height: 56px;
-    					overflow-y: scroll;
+
+						@media(min-width:800px) and (max-width: 1280px) {
+							height: 56px;
+    						overflow-y: scroll;
+						}
 
 						p {
 							color: $color-gray-primary;

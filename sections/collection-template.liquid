@@ -23,6 +23,9 @@
 			<div class="col-12 col-md-3 mb-4">
 				<a href="{{ product.url }}">
 					<div class="image-box">
+						{% if product.compare_at_price < product.price %}
+							<span class="bag-discount">Discount %</span>
+						{% endif %}
 						<img
 							class="lazyload"
 							data-src="{{ product.featured_image.src | img_url: '300x400' }}"
@@ -31,7 +34,12 @@
 						<div class="price-content">
 							<span class="price">
 								{% include 'icon-cart.liquid' %}
-								{{ product.price | money }}</span
+								{% if product.compare_at_price < product.price %}
+									{{ product.compare_at_price | money | replace: ",00", "" }} <s class="ms-2">{{ product.price | money | replace: ",00", "" }}</s>	
+								{% else %}
+									{{ product.price | money | replace: ",00", "" }}
+								{% endif %}
+							</span
 							>
 							<span class="fav">
 								{% render 'ZooomyListWishlistColl', product: product %}

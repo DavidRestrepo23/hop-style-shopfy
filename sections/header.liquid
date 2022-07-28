@@ -34,8 +34,13 @@
 				</div>
 				<div class="__links icons">
 					<ul>
-						<li>
-							<a href=""> {% include 'icon-language.liquid' %} </a>
+						<li class="language-icon">
+							<span>{% include 'icon-language.liquid' %}</span>
+							<div class="dropdown-selector">
+								{% form 'currency' %}
+									{{ form | currency_selector }}
+								{% endform %}
+							</div>
 						</li>
 						<li>
 							<div class="open-search">
