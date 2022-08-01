@@ -1,0 +1,49 @@
+{% form 'customer_login', novalidate: 'novalidate' %}
+
+    {%- if form.errors -%}
+      <div class="form-message form-message--error">
+        <h2 class="h3 form-message__title " tabindex="-1" data-form-status>{{ 'contact.form.error_heading' | t }}</h2>
+        {{ form.errors | default_errors }}
+      </div>
+    {%- endif -%}
+
+    <input
+      type="email"
+      name="customer[email]"
+      id="CustomerEmail"
+      autocomplete="email"
+      autocorrect="off"
+      autocapitalize="off"
+      placeholder="Email address"
+      {%- if form.errors contains 'form' -%}
+        class="input--error"
+        aria-invalid="true"
+      {%- endif -%}
+      >
+
+      {% if form.password_needed %}
+        <input
+          type="password"
+          value=""
+          placeholder="Password"
+          name="customer[password]"
+          id="CustomerPassword"
+          {%- if form.errors contains 'form' -%}
+            class="input--error"
+            aria-invalid="true"
+          {%- endif -%}
+        >
+      {% endif %}
+
+      <div class="text-start">
+        {% if form.password_needed %}
+          <p><a href="#recover" class="forgot-password-text" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
+        {% endif %}
+
+        <input type="submit" class="btn" value="LOG IN">
+
+        <p class="mt-4 create-account-link">
+          Don't have an account? <span>Register now</span>
+        </p>
+      </div>
+{% endform %}

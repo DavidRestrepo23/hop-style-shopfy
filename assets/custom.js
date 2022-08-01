@@ -18,3 +18,72 @@ $(".hamburger").click(function () {
         `)
 	}
 })
+
+$(".gocart-button-mobile").click(function(){
+    $(".go-cart__trigger").click();
+});
+
+$(".cart-footer").click(function(){
+   $(".gocart-button-mobile").click();
+});
+
+$(".radio-size").click(function(){
+    $(".js-go-cart-add-to-cart").removeAttr('disabled');
+})
+
+$(".create-account-link").click(function(){
+    $("#form-login").hide();
+    $("#form-register").show();
+    $(".modal-body .title").html("Register")
+})
+
+$(".forgot-password-text").click(function(){
+    $("#form-login").hide();
+    $("#form-recover").show();
+    $(".modal-body .title").html("Recover Password")
+})
+
+$(".back-login-link").click(function(){
+    $("#form-register").hide();
+    $("#form-login").show();
+    $(".modal-body .title").html("Great to have you back!")
+})
+
+$(".recover-passw").click(function(){
+    $("#form-recover").hide();
+    $("#form-login").show();
+    $(".modal-body .title").html("Great to have you back!")
+})
+
+$(".open-search").click(function(){
+    $(".search-bar-section").addClass("open")
+})
+
+$(".close-search").click(function(){
+    $(".search-bar-section").removeClass("open")
+})
+
+$(".language-icon").click(function(){
+    $(".dropdown-selector").toggleClass("open");
+
+    $("select").change(function(){
+        $("#currency_form").submit();
+    })
+})
+
+$(".share-link").click(function(){
+    const url = $(this).data('url');
+    const path = location.origin + url
+    navigator.clipboard.writeText(path);
+    $(this).addClass("copied")
+    setTimeout(()=>{
+        $(this).removeClass("copied")
+    },3000)
+})
+
+$(".count-review").html($(".jdgm-histogram__frequency").html())
+
+var endlessScroll = new Ajaxinate({
+    container: '#Huratips-Loop',
+    pagination: '#Huratips-Pagination'
+});

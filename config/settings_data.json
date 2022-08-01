@@ -11,6 +11,12 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "sale_link": "",
+          "lookbook_link": "",
+          "order_call_link": "",
+          "facebook_link": "",
+          "instagram_link": "",
+          "wp_link": ""
         }
       },
       "1655168638d0bfbf06": {
@@ -69,13 +75,14 @@
         ],
         "settings": {
           "title": "one more step into the world of <span>our fashion<\/span>",
-          "subtext": "The idea of self-worth, one way or another, is free of art.\t\t\tSublimation monotonously induces destructive."
+          "subtext": "The idea of self-worth, one way or another, is free of art.\t\t\tSublimation monotonously induces destructive.",
+          "url_reel": "https:\/\/www.youtube.com\/embed\/tiw6SSptWKc"
         }
       },
       "1655171411cec64c5f": {
         "type": "block-images-with-text",
         "settings": {
-          "title": "We turn the\t\t\t\t<a href=\"\/collections\/all\" class=\"btn btn-primary\">Shop Now\n<\/a>\t\t\t\t<strong>perception<\/strong> of <b>style<\/b> <br>\t\t\t\t<span class=\"gray\">and create<\/span> our own <b>interpretation<\/b>",
+          "title": "We turn the\t\t\t\t<a href=\"\/collections\/all\" class=\"btn btn-primary with-arrow\">Shop Now\n<\/a>\t\t\t\t<strong>perception<\/strong> of <b>style<\/b> <br>\t\t\t\t<span class=\"gray\">and create<\/span> our own <b>interpretation<\/b>",
           "image_1": "shopify:\/\/shop_images\/image-1.png",
           "image_2": "shopify:\/\/shop_images\/Rectangle_37_1.png",
           "image_3": "shopify:\/\/shop_images\/image-3.png",
@@ -94,16 +101,35 @@
           "collection": "jogger"
         }
       },
-      "16552371285558e527": {
-        "type": "footer",
-        "settings": {
-        }
-      },
       "16556803315c3210b8": {
         "type": "hop-consulting",
         "settings": {
           "link_text": "Order call",
           "url": "#"
+        }
+      },
+      "go-cart": {
+        "type": "go-cart",
+        "settings": {
+        }
+      },
+      "modal-user": {
+        "type": "modal-user",
+        "settings": {
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "url_reel": "https:\/\/www.youtube.com\/embed\/tiw6SSptWKc"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
         }
       }
     },
@@ -113,8 +139,7 @@
       "1655171411cec64c5f",
       "165522536007013167",
       "16556803315c3210b8",
-      "1655234983b7f065ab",
-      "16552371285558e527"
+      "1655234983b7f065ab"
     ]
   }
 }

@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="theme-color" content="{{ settings.color_button }}" />
 
+		<link rel="icon" href="{{'favicon.png'| asset_url}}" type="image/png" sizes="16x16">
+
 		<link rel="preconnect" href="https://cdn.shopify.com" crossorigin />
 		<link rel="preconnect" href="https://fonts.shopify.com" crossorigin />
 		<link rel="preconnect" href="https://monorail-edge.shopifysvc.com" />
@@ -18,6 +20,13 @@
 			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 			crossorigin="anonymous"
 		/>
+
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+			crossorigin="anonymous"
+      	/>
 
 		{%- if canonical_url != blank -%}
 		<link rel="canonical" href="{{ canonical_url }}" />
@@ -64,7 +73,7 @@
 			referrerpolicy="no-referrer"
 		/>
 
-		{{"style-custom.scss.css" | asset_url | stylesheet_tag}}
+		{{ "style-custom.scss.css" | asset_url | stylesheet_tag }}
 
 		<style>
 			{{ header_font | font_face: font_display: 'swap' }}
@@ -155,10 +164,14 @@
 			}
 		</script>
 
+		{{ "go-cart.scss.css" | asset_url | stylesheet_tag }}
+
 		{{
 			content_for_header
 		}}
-	  {% render 'judgeme_core' %}
+  		
+		{% render 'judgeme_core' %}
+		
 </head>
 
 	<body class="template-{{ request.page_type | handle }}">
@@ -166,11 +179,11 @@
 			"general.accessibility.skip_to_content" | t
 		}}</a>
 
-		<!-- {%- if settings.enable_ajax -%}
-    {% include 'cart-popup' %}
-  {%- endif -%} -->
+		{% section 'modal-user' %}
 
 		{% section 'header' %}
+
+		{% include 'search-bar.liquid' %}
 
 		<div class="page-container drawer-page-content" id="PageContainer">
 			<main
@@ -198,6 +211,11 @@
 			</li>
 		</ul>
 
+		{% section 'footer' %}
+		{%- section 'go-cart' -%}
+
+		
+
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 			referrerpolicy="no-referrer"
@@ -213,8 +231,17 @@
 			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
 			crossorigin="anonymous"
 		></script>
-		
-		{{"custom.js" | asset_url | script_tag}}
+
+		{% if template contains 'collection' %}
+			{{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }}
+		{% endif %}
+
+		{{ "custom.js" | asset_url | script_tag }}
+		{{ "gocart.js" | asset_url | script_tag }}
+
+		<script>
+			var goCart = new GoCart()
+		</script>
 
 		<script>
 			$(".slider-products-home").slick({
@@ -225,22 +252,22 @@
 				slidesToShow: 4,
 				prevArrow: $(".prev"),
 				nextArrow: $(".next"),
-				responsive:[
+				responsive: [
 					{
-						breakpoint:899,
+						breakpoint: 899,
 						settings: {
 							slidesToShow: 2,
-        					slidesToScroll: 1
-						}
+							slidesToScroll: 1,
+						},
 					},
 					{
-						breakpoint:767,
+						breakpoint: 767,
 						settings: {
 							slidesToShow: 1,
-        					slidesToScroll: 1
-						}
-					}
-				]
+							slidesToScroll: 1,
+						},
+					},
+				],
 			})
 			$(".slider-for").slick({
 				autoplay: true,
@@ -251,7 +278,7 @@
 				draggable: false,
 				swipe: false,
 				touchMove: false,
-            	asNavFor: '.slider-nav'
+				asNavFor: ".slider-nav",
 			})
 
 			$(".slider-nav").slick({
@@ -266,7 +293,7 @@
 				draggable: false,
 				swipe: false,
 				touchMove: false,
-				centerPadding: '60px',				
+				centerPadding: "60px",
 			})
 		</script>
 	<script src="https://zooomyapps.com/wishlist/ZooomyColl.js" data-shop-id="hopstyle2020.myshopify.com" data-cus-id="{{customer.id}}" data-cus-email="{{customer.email}}" data-cus-name="{{customer.first_name}} {{customer.last_name}}" data-page="{{template}}"></script>

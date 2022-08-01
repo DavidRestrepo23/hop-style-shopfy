@@ -9,10 +9,10 @@
 					alt="Hop Style"
 			/></a>
 		</div>
-		<div class="px-4 cart">
-			<a href="/cart">{% include 'icon-cart-mobile.liquid' %} <span>0</span> </a>
+		<div class="px-4 cart gocart-button-mobile">
+			{% include 'icon-cart-mobile.liquid' %} <span class="gocart-button-mobile-span"></span>
 		</div>
-		{% include 'sidebar-menu.liquid' %}
+		{% include 'sidebar-menu.liquid', linklist: section.settings.menu_links %}
 	</nav>
 	<nav class="container-fluid nav d-none d-md-flex">
 		<div class="row w-100 align-items-center">
@@ -34,25 +34,32 @@
 				</div>
 				<div class="__links icons">
 					<ul>
-						<li>
-							<a href=""> {% include 'icon-language.liquid' %} </a>
+						<li class="language-icon">
+							<span>{% include 'icon-language.liquid' %}</span>
+							<div class="dropdown-selector">
+								{% form 'currency' %}
+									{{ form | currency_selector }}
+								{% endform %}
+							</div>
 						</li>
 						<li>
-							<a href=""> {% include 'icon-search.liquid' %} </a>
+							<div class="open-search">
+								{% include 'icon-search.liquid' %}
+							</div>
 						</li>
 						<li>
-							<a href=""> {% include 'icon-favorites.liquid' %} </a>
+							<a href="/pages/mywishlist"> {% include 'icon-favorites.liquid' %} </a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="col-md-2 text-center nav__item">
 				<span>
-					<a href="/cart">{% include 'icon-cart.liquid' %} Bag(0)</a>
+					{%- include "go-cart-button" -%}
 				</span>
 			</div>
 			<div class="col-md-1 text-center nav__item">
-				{% include 'icon-user.liquid' %}
+				<span style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#userModal">{% include 'icon-user.liquid' %}</span>
 			</div>
 		</div>
 	</nav>
