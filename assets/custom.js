@@ -71,6 +71,16 @@ $(".language-icon").click(function(){
     })
 })
 
+$(".share-link").click(function(){
+    const url = $(this).data('url');
+    const path = location.origin + url
+    navigator.clipboard.writeText(path);
+    $(this).addClass("copied")
+    setTimeout(()=>{
+        $(this).removeClass("copied")
+    },3000)
+})
+
 $(".count-review").html($(".jdgm-histogram__frequency").html())
 
 var endlessScroll = new Ajaxinate({

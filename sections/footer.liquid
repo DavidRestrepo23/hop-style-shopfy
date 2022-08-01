@@ -45,8 +45,15 @@
                 <ul class="others-links">
                     <li data-bs-toggle="modal" data-bs-target="#userModal"><span>{% include 'icon-user.liquid' %} Sign In</span></li>
                     <li class="cart-footer"><span>{% include 'icon-cart.liquid' %} Bag (0)</span></li>
-                    <li><a href="#">{% include 'icon-favorites.liquid' %} Favorites</a></li>
-                    <li><a href="#">{% include 'icon-language.liquid' %} Language</a></li>
+                    <li><a href="pages/mywishlist">{% include 'icon-favorites.liquid' %} Favorites</a></li>
+                    <li class="language-icon d-flex">
+                        <span>{% include 'icon-language.liquid' %}</span>
+                        <div class="dropdown-selector ms-2">
+                            {% form 'currency' %}
+                                {{ form | currency_selector }}
+                            {% endform %}
+                        </div>
+                    </li>
                 </ul>
             </div>
        </div>

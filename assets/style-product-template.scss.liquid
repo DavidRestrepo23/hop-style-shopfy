@@ -382,10 +382,30 @@ header {
 		}
 
 		.share-link {
-			position: absolute;
-			left: 0;
-			right: 0;
 			bottom: 30px;
+			cursor: pointer;
+			left: 0;
+			position: absolute;
+			right: 0;
+
+			&.copied {
+				&::before {
+					content: "";
+					position: absolute;
+					background: $color-black;
+					border-radius: 50%;
+					width: 48px;
+					height: 48px;
+				}
+				&::after {
+					content: "✔";
+					position: absolute;
+					color: $color-white;
+					top: 7px;
+					left: 45px;
+					font-size: 22px;
+				}
+			}
 		}
 	}
 	@media (min-width: 1000px) and (max-width: 1299px) {

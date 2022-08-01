@@ -61,8 +61,8 @@
 							{% endfor %}
 						</div>
 					</div>
-					<div class="text-center share-link d-none d-md-block">
-						<a href="#">{% include 'icon-share.liquid' %}</a>
+					<div class="text-center share-link d-none d-md-block" data-url="{{product.url}}">
+						{% include 'icon-share.liquid' %}
 					</div>
 				</div>
 				<div class="reel-content d-block d-md-none p-0">

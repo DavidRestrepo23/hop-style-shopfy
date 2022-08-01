@@ -12,7 +12,7 @@
 		<div class="px-4 cart gocart-button-mobile">
 			{% include 'icon-cart-mobile.liquid' %} <span class="gocart-button-mobile-span"></span>
 		</div>
-		{% include 'sidebar-menu.liquid' %}
+		{% include 'sidebar-menu.liquid', linklist: section.settings.menu_links %}
 	</nav>
 	<nav class="container-fluid nav d-none d-md-flex">
 		<div class="row w-100 align-items-center">

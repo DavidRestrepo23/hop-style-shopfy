@@ -1,5 +1,5 @@
 <div
-	class="modal fade"
+	class="modal fade px-0"
 	id="userModal"
 	tabindex="-1"
 	aria-labelledby="userModalLabel"
@@ -9,6 +9,7 @@
 		<div class="modal-content">
 			<div class="modal-body form-user">
 				<div class="text-center mb-3">
+					<span data-bs-dismiss="modal" aria-label="Close">{% include 'icon-close.liquid' %}</span>
 					<img src="{{ 'hop-logo.png' | asset_url }}" alt="">
 					<hr>
 					<span class="title">Great to have you back!</span>
