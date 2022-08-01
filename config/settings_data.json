@@ -121,7 +121,6 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "url_reel": "https:\/\/www.youtube.com\/embed\/tiw6SSptWKc"
         }
       },
       "product-recommendations": {
@@ -140,6 +139,14 @@
       "165522536007013167",
       "16556803315c3210b8",
       "1655234983b7f065ab"
-    ]
+    ],
+    "blocks": {
+      "9901917232353999808": {
+        "type": "shopify:\/\/apps\/buddha-mega-menu-navigation\/blocks\/megamenu\/dbb4ce56-bf86-4830-9b3d-16efbef51c6f",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }
