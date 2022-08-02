@@ -1,34 +1,30 @@
 <section>
 	<div class="sidebar">
-       
 		<div class="sidebar-menu">
 			<ul class="menu-links mt-5">
-                {% for link in linklists[linklist].links %}
-                    <a href="{{link.url}}">
-                        <li>{{link.title}} {% include 'icon-arrow-top.liquid' %} </li>
-                    </a>
-                {% endfor %}
-                <a href="#">
-                    <li>Order a call {% include 'icon-arrow-top.liquid' %} </li>
-                </a>
+				{% for link in linklists[linklist].links %}
+				<a href="{{ link.url }}">
+					<li>{{ link.title }} {% include 'icon-arrow-top.liquid' %}</li>
+				</a>
+				{% endfor %}
+				<a href="#">
+					<li>Order a call {% include 'icon-arrow-top.liquid' %}</li>
+				</a>
 			</ul>
 		</div>
-        <div>
-            <ul class="other-links mt-3 mt-md-5">
-                <li data-bs-toggle="modal" data-bs-target="#userModal">{% include 'icon-user.liquid' %} Sign In</li>
-                <a href="/pages/mywishlist"><li>{% include 'icon-favorites.liquid' %} Favorites</li></a>
-                <li class="language-icon">
-                    <span>{% include 'icon-language.liquid' %} Language</span>
-                    <div class="dropdown-selector">
-                        {% form 'currency' %}
-                            {{ form | currency_selector }}
-                        {% endform %}
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="search open-search">
-            {% include 'icon-search.liquid' %}
-        </div>
+		<div>
+			<ul class="other-links mt-3 mt-md-5">
+				<li data-bs-toggle="modal" data-bs-target="#userModal">
+					{% include 'icon-user.liquid' %} Sign In
+				</li>
+				<a href="/pages/mywishlist"
+					><li>{% include 'icon-favorites.liquid' %} Favorites</li></a
+				>
+				<li class="language-icon" data-bs-toggle="modal" data-bs-target="#currencyModal">
+					<span>{% include 'icon-language.liquid' %} Currency</span>
+				</li>
+			</ul>
+		</div>
+		<div class="search open-search">{% include 'icon-search.liquid' %}</div>
 	</div>
 </section>

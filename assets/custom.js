@@ -63,12 +63,8 @@ $(".close-search").click(function(){
     $(".search-bar-section").removeClass("open")
 })
 
-$(".language-icon").click(function(){
-    $(".dropdown-selector").toggleClass("open");
-
-    $("select").change(function(){
-        $("#currency_form").submit();
-    })
+$("select").change(function(){
+    $("#currency_form").submit();
 })
 
 $(".share-link").click(function(){
@@ -87,3 +83,5 @@ var endlessScroll = new Ajaxinate({
     container: '#Huratips-Loop',
     pagination: '#Huratips-Pagination'
 });
+
+$('.weglot-container').clone().appendTo('.dropdown-selector');
