@@ -2119,3 +2119,29 @@ footer {
 		width: 100%;
 	}
 }
+
+.weglot-container {
+
+	z-index: 100 !important;
+
+	a {
+		padding: 10px !important;
+	}
+
+	.wg-flags a img.wg-flag {
+		margin: 0 !important;
+	}
+
+	.wgcurrent {
+		&::after {
+			display: none !important;
+		}
+	}
+}
+
+.wg-default, .wg-default .country-selector {
+	bottom: inherit !important;
+    position: fixed !important;
+    right: 0 !important;
+    top: 250px !important;
+}
